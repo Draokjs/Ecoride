@@ -14,6 +14,9 @@ Front end:
 - Typescript
 
 Backend : 
+- Framework Symfony
+- My sql
+- PostgreSQL (pg admin)
 
 Source:
 Test site: https://www.browserstack.com/ &  https://amplitude.com/
