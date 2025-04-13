@@ -1,10 +1,14 @@
 body {
-  background-color: burlywood;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: lightslategray;
 }
 
 #carousel {
   max-width: 20%; /* Adjust the width as needed */
   margin: 0 auto; /* Center the carousel */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2%;
+  background-color: lightgreen;
 }
