@@ -3,6 +3,16 @@
 
 // Include any default variable overrides here (though functions won't be available)
 
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$custom-color: (
+  "main-color": #19ae65,
+  "complementary-color": #a98467,
+  "third-color": #2c19ae
+);
+
+$theme-colors: map-merge($theme-colors, $custom-color);
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
