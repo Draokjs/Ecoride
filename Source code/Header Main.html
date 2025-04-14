@@ -4,25 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ecoride</title>
-  <link rel="stylesheet" href="/Source code/Style/Style.css">
-  <link rel="stylesheet" href="Style/Homepage.css">
+  <link rel="stylesheet" href="Style/Boostrap.css">
+  <link rel="stylesheet" href="Style/Headermain.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
 
+   <!-- Header -->
   <div class="d-flex flex-row justify-content-evenly align-items-center header">
-    <div class="p-2 mx-5 h1"style="color:aquamarine;"> Ecoride</div>
+    <div class="p-2 mx-5 h1"> Ecoride</div>
     <div class="p-2 mx-5">
       <form class="navbar-form">
-        <input type="search" id="search" placeholder="Rechercher" class="input-group-append">
+        <input type="search" id="search" placeholder="Itinéraire" class="input-group-append">
         <button type="submit"><i class="fa fa-search" style="color:aquamarine"></i></button>
       </form>
     </div>
     <div class="p-2 mx-5">Login / Register</div>
   </div>
-
+   <!-- Navbar -->
+  
+   <div class="container navbar" style="height: 100px; background-color: #19aea3;">
+    <div class="row">
+      <div class="col-sm">
+        <a href="Header Main.html" target="_blank" style="text-decoration: none; color: white;">Home</a>
+      </div>
+      <div class="col-sm">
+        <a href="Covoiturage.html" target="_blank" style="text-decoration: none; color: white;">Covoiturage</a>
+      </div>
+      <div class="col-sm">
+        <a href="Contactes.html" target="_blank" style="text-decoration: none; color: white;">Contactes</a>
+      </div>
+    </div>
+  </div>
+  
 <script src="Index.js"></script>
 </body>
 </html>
