@@ -18,3 +18,14 @@ body {
 .navbar {
   text-decoration: none;
 }
+#accueil, #trajets, #espace {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+#accueil:hover, #trajets:hover, #espace:hover {
+  background-color: #19ae65;
+  height: 100%;
+}
+
+

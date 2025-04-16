@@ -10,35 +10,43 @@
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body>
+<body class="bg-complementary-color">
 
-   <!-- Header -->
-  <div class="d-flex flex-row justify-content-evenly align-items-center header">
-    <div class="p-2 mx-5 h1"> Ecoride</div>
-    <div class="p-2 mx-5">
-      <form class="navbar-form">
-        <input type="search" id="search" placeholder="Itinéraire" class="input-group-append">
-        <button type="submit"><i class="fa fa-search" style="color:aquamarine"></i></button>
-      </form>
-    </div>
-    <div class="p-2 mx-5">Login / Register</div>
+ <!-- Header -->
+ <div class="d-flex flex-row justify-content-evenly align-items-center header">
+  <div class="p-2 mx-5 h1 text-main-color">
+    <img src="Image/Logo.jpeg" alt="Logo" style="max-height: 80px; object-fit: contain;">
   </div>
-   <!-- Navbar -->
-  
-   <div class="container navbar" style="height: 100px; background-color: #19aea3;">
-    <div class="row">
-      <div class="col-sm">
-        <a href="Header Main.html" target="_blank" style="text-decoration: none; color: white;">Home</a>
-      </div>
-      <div class="col-sm">
-        <a href="Covoiturage.html" target="_blank" style="text-decoration: none; color: white;">Covoiturage</a>
-      </div>
-      <div class="col-sm">
-        <a href="Contactes.html" target="_blank" style="text-decoration: none; color: white;">Contactes</a>
-      </div>
+  <div class="row navbar" style="height: 100%;">
+    <div class="col-sm mx-5 d-flex align-items-center" id="accueil" style ="font-size: 1.3rem;">
+      <a href="Header Main.html" target="_blank" style="text-decoration: none; color: black;">Accueil</a>
+    </div>
+    <div class="col-sm mx-5" id="trajets" style="font-size: 1.3rem;">
+      <a href="Vos trajets.html" target="_blank" style="text-decoration: none; color: black;">Vos trajets</a>
+    </div>
+    <div class="col-sm mx-5" id="espace" style="font-size: 1.3rem;">
+      <a href="Mon espace.html" target="_blank" style="text-decoration: none; color: black;">Mon espace</a>
     </div>
   </div>
-  
+
+  <!-- Dropdown -->
+  <div class="p-2 mx-5 login">
+    <div class="dropdown">
+      <button class="Loginbutton dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="border: none; background-color: transparent;">
+        <span class="Seconnecter">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="var(--bs-main-color)" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+        </svg>
+        </span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="Login.html" style="--bs-dropdown-link-hover-bg: #19ae65;">Se connecter</a></li>
+        <li><a class="dropdown-item" href="Register.html" style="--bs-dropdown-link-hover-bg: #19ae65;">S'inscrire</a></li>
+      </ul>
+    </div>
+  </div>
+
 <script src="Index.js"></script>
 </body>
 </html>
