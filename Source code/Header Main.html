@@ -10,9 +10,10 @@
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body class="bg-complementary-color">
+<body style="background-color: var(--bs-complementary-color)">
 
- <!-- Header -->
+ <!-- Header  logo and menu -->
+<header>
  <div class="d-flex flex-row justify-content-evenly align-items-center header">
   <div class="p-2 mx-5 h1 text-main-color">
     <img src="Image/Logo.jpeg" alt="Logo" style="max-height: 80px; object-fit: contain;">
@@ -27,9 +28,12 @@
     <div class="col-sm mx-5" id="espace" style="font-size: 1.3rem;">
       <a href="Mon espace.html" target="_blank" style="text-decoration: none; color: black;">Mon espace</a>
     </div>
+    <div class="col-sm mx-5" id="Contacs" style="font-size: 1.3rem;">
+      <a href="Contacts.html" target="_blank" style="text-decoration: none; color: black;">Contacts</a>
+    </div>
   </div>
 
-  <!-- Dropdown -->
+  <!-- Dropdown connexion -->
   <div class="p-2 mx-5 login">
     <div class="dropdown">
       <button class="Loginbutton dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="border: none; background-color: transparent;">
@@ -46,6 +50,55 @@
       </ul>
     </div>
   </div>
+</header>
+
+  <br>
+
+  <!-- Search bar -->
+
+<div class="container searchbar d-flex flex-column align-items-start mt-5" style="width: 20vw; margin-left: 2rem;">
+  <!-- Départ -->
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="input-group" style="width: 19vw;">
+        <input type="text" class="form-control" placeholder="Ville de départ" id="Ville de départ" style="height: 100%; font-size: 1.5rem;">
+      </div>
+    </div>
+  </div>
+  <!-- Arrivé -->
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="input-group" style="width: 19vw;">
+        <input type="text" class="form-control" placeholder="Ville d'arrivée" id="Ville d'arrivée" style="height: 100%; font-size: 1.5rem;">
+      </div>
+    </div>
+  </div>
+  <!-- Inverse Arrow -->
+  <button class="btn btn-complementary-color" id="arrow" type="submit" style="border-radius: 50px; position: absolute ; top: 26%; left: 18.6%; " onclick="inverseArrow()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5"/>
+    </svg>
+  </button>
+  <div class="col mt-5">
+    <div class="row justify-content-center">
+      <div class="col-12"> 
+        <div class="input-group" style="width: 19vw;">
+          <input type="date" class="form-control" placeholder="Date" id="Date" style="height: 100%; font-size: 1.5rem;">  
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12"> 
+        <div class="input-group" style="width: 19vw;">
+          <input type="date" class="form-control" placeholder="Date" id="Date" style="height: 100%; font-size: 1.5rem;">  
+        </div>
+      </div>
+    
+    
+    </div>
+
+  </div>
+</div>
 
 <script src="Index.js"></script>
 </body>

@@ -26,5 +26,5 @@ Icon: https://ionic.io/ionicons
 Test Variable name: https://mothereff.in/js-variables
 Test technology: https://caniuse.com/
 Color converter code: https://www.rapidtables.com/convert/color/index.html & https://www.code-couleur.com/ & https://colorkit.co/color/19aea3/
-Bootstrap doucmentation: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+Bootstrap doucmentation: https://getbootstrap.com/docs/5.3/getting-started/introduction/ & https://mdbootstrap.com/docs/standard/
 Test page speed: https://pagespeed.web.dev/
