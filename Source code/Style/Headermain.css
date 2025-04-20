@@ -1,13 +1,8 @@
-/* Reset body */
-body {
-  width: 100vw;
-  min-height: 100vh;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
-}
-
-header {
-  width: 100vw;
+  box-sizing: border-box;
 }
 
 /* Menu */
