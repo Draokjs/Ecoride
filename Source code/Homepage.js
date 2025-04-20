@@ -5,3 +5,6 @@ function inverseArrow() {
   departure.value = arrival.value;
   arrival.value = temp;
 }
+
+
+

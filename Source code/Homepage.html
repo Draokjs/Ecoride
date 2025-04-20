@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ecoride</title>
   <link rel="stylesheet" href="Style/Boostrap.css">
-  <link rel="stylesheet" href="Style/Headermain.css">
+  <link rel="stylesheet" href="Style/Homepage.css">
   <link rel="stylesheet" href="Style/Style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -50,17 +50,17 @@
 </header>
 
   <!-- Searchbar -->
-  <div class="container searchbar" style="width: 26%; background-color: var(--bs-main-color); border-radius: 5%;" >
+  <form class="container form-control" id="search" style="width: 26%; background-color: var(--bs-main-color); border-radius: 5%;" >
     <div class="row" style="margin-top: 3rem;">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <p class="text-center" style="font-size: 1.5rem">
           Itinéraire
         </p>
     <!-- Ville de départ -->
-    <div class="row">
+    <div class="row depart">
       <div class="col-lg-5 col-md-5 col-sm-5">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Ville de départ" id="Ville de départ" style="font-size: 1.5rem;">
+          <input type="text" class="form-control" placeholder="Ville de départ" id="Ville de départ" style="font-size: 1.5rem;" name="Ville de départ" required>
         </div>
       </div>
       
@@ -74,9 +74,9 @@
       </div>
 
       <!-- Ville d'arrivée -->
-      <div class="col-lg-5 col-md-5 col-sm-5">
+      <div class="col-lg-5 col-md-5 col-sm-5 arrivée">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Ville d'arrivée" id="Ville d'arrivée" style="font-size: 1.5rem;">
+          <input type="text" class="form-control" placeholder="Ville d'arrivée" id="Ville d'arrivée" style="font-size: 1.5rem;" name="Ville d'arrivée" required>
         </div>
       </div>
     </div>
@@ -88,14 +88,14 @@
           Dates départ / Dates d'arrivée
         </p>
         <div class="input-group">
-          <input type="date" class="form-control" placeholder="Date" id="Date" style="font-size: 1.5rem;">  
+          <input type="date" class="form-control" placeholder="Date" id="Date" style="font-size: 1.5rem;" name="date_depart" required>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12"> 
         <div class="input-group">
-          <input type="date" class="form-control" placeholder="Date" id="DateArrivee" style="font-size: 1.5rem;">
+          <input type="date" class="form-control" placeholder="Date" id="DateArrivee" style="font-size: 1.5rem;" name="date_arrivee" required>
         </div>
       </div>
     </div>
@@ -105,18 +105,20 @@
         <p class="text-center" style="font-size: 1.5rem">
           Passagers
         </p>
-        <input type="number" class="form-control" placeholder="Nombre de personnes" id="Nombre de personnes" style="font-size: 1.5rem;">
+        <input type="number" class="form-control" placeholder="Nombre de personnes" id="Nombre de personnes" style="font-size: 1.5rem;" name="nombre_passagers" required>
       </div>
     </div>
     <!-- Rechercher button -->
     <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
       <div class="row mx-5">
-        <button type="submit" class="btn btn-complementary-color"> Rechercher </button>
+        <button type="submit" class="btn btn-complementary-color" id="submit" onclick="validateForm()"> Rechercher </button>
       </div>
     </div>
       </div>
-  </div>
+  </form>
 </div>
+
+<br>
 
 <!-- Description et images  1 -->
 <div class="Description mt-5">
@@ -261,7 +263,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2021 Copyright:
+    © 2025 Copyright:
     <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
   </div>
   <!-- Copyright -->
@@ -269,8 +271,10 @@
 <!-- Footer -->
 
 
-<script src="Index.js"></script>
+<script src="Homepage.js"></script>
 </body>
 </html>
+
+
 
 
