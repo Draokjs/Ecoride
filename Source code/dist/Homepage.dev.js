@@ -14,9 +14,9 @@ function validateForm() {
   var dateArrival = document.getElementById("DateArrivee").value;
   var departure = document.getElementById("Ville de départ").value;
   var arrival = document.getElementById("Ville d'arrivée").value;
-  var numberOfPeople = document.getElementById("Nombre de personnes").value;
+  var numberOfPassengers = document.getElementById("Nombre de passagers").value;
 
-  if (!dateDeparture || !dateArrival || !departure || !arrival || !numberOfPeople) {
+  if (!dateDeparture || !dateArrival || !departure || !arrival || !numberOfPassengers) {
     return false;
   }
 
@@ -35,9 +35,9 @@ function validateForm() {
     return false;
   }
 
-  if (numberOfPeople < 1 || numberOfPeople > 5) {
-    alert("Le nombre de personnes doit etre compris entre 1 et 5");
-    console.log("Form validation: false - invalid number of people");
+  if (numberOfPassengers < 1 || numberOfPassengers > 5) {
+    alert("Le nombre de passagers doit etre compris entre 1 et 5");
+    console.log("Form validation: false - invalid number of passengers");
     return false;
   }
 
