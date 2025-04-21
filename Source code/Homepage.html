@@ -19,16 +19,16 @@
       <img src="Image/Logo.png" alt="Logo">
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2 text-center" id="accueil" style="font-size: 1.3rem; ">
-      <a href="Header Main.html" target="_blank" style="text-decoration: none; color: black;">Accueil</a>
+      <a href="Homepage.html" target="_top" style="text-decoration: none; color: black;">Accueil</a>
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2 text-center" id="trajets" style="font-size: 1.3rem;">
-      <a href="Vos trajets.html" target="_blank" style="text-decoration: none; color: black;">Vos trajets</a>
+      <a href="Vos trajets.html" target="_top" style="text-decoration: none; color: black;">Vos trajets</a>
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2 text-center" id="espace" style="font-size: 1.3rem;">
-      <a href="Mon espace.html" target="_blank" style="text-decoration: none; color: black;">Mon espace</a>
+      <a href="Mon espace.html" target="_top" style="text-decoration: none; color: black;">Mon espace</a>
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2 text-center" id="Contacs" style="font-size: 1.3rem;">
-      <a href="Contacts.html" target="_blank" style="text-decoration: none; color: black;">Contacts</a>
+      <a href="Contacts.html" target="_top" style="text-decoration: none; color: black;">Contacts</a>
     </div>
     <div class=" col-sm-2 col-md-2 col-lg-2 text-center login">
       <div class="dropdown">
@@ -49,8 +49,8 @@
   </div>
 </header>
 
-  <!-- Searchbar -->
-  <form class="container form-control" id="search" style="width: 26%; background-color: var(--bs-main-color); border-radius: 5%;" >
+  <!-- Search form -->
+  <form class="container form-control mt-5" id="search" style="width: 26%; background-color: var(--bs-main-color); border-radius: 5%;" >
     <div class="row" style="margin-top: 3rem;">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <p class="text-center" style="font-size: 1.5rem">
@@ -67,8 +67,8 @@
       <!-- Invert arrow -->
       <div class="col-lg-2 col-md-2 col-sm-2 d-flex justify-content-center align-items-center">
         <button class="btn btn-complementary-color" id="arrow" type="button" onclick="inverseArrow()">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
           </svg>
         </button>
       </div>
@@ -105,7 +105,7 @@
         <p class="text-center" style="font-size: 1.5rem">
           Passagers
         </p>
-        <input type="number" class="form-control" placeholder="Nombre de personnes" id="Nombre de personnes" style="font-size: 1.5rem;" name="nombre_passagers" required>
+        <input type="number" class="form-control" placeholder="Nombre de personnes" id="Nombre de personnes" style="font-size: 1.5rem;" name="nombre_passagers" min="1" max="5" required>
       </div>
     </div>
     <!-- Rechercher button -->
