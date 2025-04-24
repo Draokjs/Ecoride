@@ -42,6 +42,13 @@ function validateForm() {
   }
 
   console.log("Form validation: true");
+  localStorage.setItem("search", JSON.stringify({
+    dateDeparture: dateDeparture,
+    dateArrival: dateArrival,
+    departure: departure,
+    arrival: arrival,
+    numberOfPassengers: numberOfPassengers
+  }));
   return true;
 }
 

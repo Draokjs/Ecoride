@@ -40,6 +40,13 @@ function validateForm() {
   }
 
   console.log("Form validation: true");
+  localStorage.setItem("search", JSON.stringify({
+    dateDeparture,
+    dateArrival,
+    departure,
+    arrival,
+    numberOfPassengers
+  }));
   return true;
 }
 
