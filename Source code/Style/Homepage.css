@@ -26,3 +26,8 @@
     transition: transform 0.3s ease;
   }
 
+  #submit {
+    background-color: var(--bs-complementary-color);
+    font-size: 1.5rem;
+  }
+
