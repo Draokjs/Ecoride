@@ -1,59 +1,68 @@
-function inverseArrow() {
-  const departure = document.getElementById("Ville de départ");
-  const arrival = document.getElementById("Ville d'arrivée");
+// === Arrow Inversion ===
+document.getElementById("arrow").addEventListener("click", () => {
+  const departure = document.getElementById("departure-city");
+  const arrival = document.getElementById("arrival-city");
+
   const temp = departure.value;
   departure.value = arrival.value;
   arrival.value = temp;
-}
+});
 
+// === Form Validation ===
 function validateForm() {
-  const form = document.getElementById("submit");
-  const dateDeparture = document.getElementById("Date").value;
-  const dateArrival = document.getElementById("DateArrivee").value;
-  const departure = document.getElementById("Ville de départ").value;
-  const arrival = document.getElementById("Ville d'arrivée").value;
-  const numberOfPassengers = document.getElementById("Nombre de passagers").value;
+  const departure = document.getElementById("departure-city");
+  const arrival = document.getElementById("arrival-city");
+  const dateDeparture = document.getElementById("DepartureDate").value;
+  const dateArrival = document.getElementById("ArrivalDate").value;
+  const passengers = parseInt(document.getElementById("Passengers").value, 10);
 
-  if (!dateDeparture || !dateArrival || !departure || !arrival || !numberOfPassengers) {
+  if (!dateDeparture || !dateArrival || !departure.value || !arrival.value || !passengers) {
+    alert("Veuillez remplir tous les champs.");
+    document.getElementById("Passengers").focus();
     return false;
   }
 
-  const dateDepartureDate = new Date(dateDeparture);
-  const dateArrivalDate = new Date(dateArrival);
+  const depDate = new Date(dateDeparture);
+  const arrDate = new Date(dateArrival);
 
-  if (dateDepartureDate > dateArrivalDate) {
-    alert("La date de depart ne peut pas etre apres la date d'arrivee");
-    console.log("Form validation: false - invalid dates");
+  if (depDate > arrDate) {
+    alert("La date de départ ne peut pas être après la date d'arrivée.");
     return false;
   }
 
-  if (departure === arrival) {
-    alert("La ville de depart ne peut pas etre la meme que la ville d'arrivee");
-    console.log("Form validation: false - same city");
+  if (departure.value === arrival.value) {
+    alert("La ville de départ et d'arrivée ne peuvent pas être identiques.");
     return false;
   }
 
-  if (numberOfPassengers < 1 || numberOfPassengers > 5) {
-    alert("Le nombre de passagers doit etre compris entre 1 et 5");
-    console.log("Form validation: false - invalid number of passengers");
+  if (passengers < 1 || passengers > 5) {
+    alert("Le nombre de passagers doit être entre 1 et 5.");
     return false;
   }
 
-  console.log("Form validation: true");
+  // Save search data
   localStorage.setItem("search", JSON.stringify({
     dateDeparture,
     dateArrival,
-    departure,
-    arrival,
-    numberOfPassengers
+    departure: departure.value,
+    arrival: arrival.value,
+    numberOfPassengers: passengers
   }));
+
   return true;
 }
 
-document.getElementById("submit").addEventListener("click", function(event) {
+if (!departure.value.trim() || !arrival.value.trim()) {
+  alert("Les champs de ville ne peuvent pas être vides.");
+  return false;
+}
+
+
+// === Handle form submission ===
+document.getElementById("search").addEventListener("submit", (event) => {
   event.preventDefault();
   if (validateForm()) {
+    document.getElementById("search").reset();
     window.open("Resultat.html", "_top");
   }
 });
-

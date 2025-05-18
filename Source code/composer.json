@@ -1,0 +1,7 @@
+{
+  "name": "Ecoride",
+  "description": "A carpool project",
+  "require": {
+    "php": ">=7.4"
+  }
+}

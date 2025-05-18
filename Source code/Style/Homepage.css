@@ -1,14 +1,12 @@
-/* Menu */
-  .navbar {
-    text-decoration: none;
-  }
-
-  #accueil, #trajets, #espace {
+/* Menu link*/
+.nav-link {
+    text-decoration: none; 
+    color: black;
     background-color: transparent;
     transition: background-color 0.3s ease;
   }
 
-  #accueil:hover, #trajets:hover, #espace:hover , #Contacs:hover {
+  .nav-link:hover {
     background-color: #19aea3;
     opacity: 0.8;
     height: 100%;
@@ -16,18 +14,36 @@
 
 
 /* Arrow rotation */
-  #arrow :active{
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
-  }
-
   #arrow {
-    transform: rotate(0deg);
     transition: transform 0.3s ease;
   }
 
+  #arrow:active {
+    transform: scale(1.2);
+  }
+
+/* Submit button */
   #submit {
     background-color: var(--bs-complementary-color);
     font-size: 1.5rem;
   }
 
+
+  /* Dropdown item */
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--bs-main-color);
+}
+
+/* Search */
+#search {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--bs-main-color);
+}
+
+/* Image description  */
+#Descriptionimage img {
+  width: 80%;
+  height: auto;
+}
