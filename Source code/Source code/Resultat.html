@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecoride</title>
+  <link rel="stylesheet" href="Style/Boostrap.css">
+  <link rel="stylesheet" href="Style/Homepage.css">
+  <link rel="stylesheet" href="Style/Style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="Resultat.css">
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+<header>
+  <div class="row d-flex align-items-center bg-body-tertiary">
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <img src="Image/Logo.png" alt="Logo">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2 text-center" id="accueil" style="font-size: 1.3rem; ">
+      <a href="Index.html" target="_top" style="text-decoration: none; color: black;">Accueil</a>
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2 text-center" id="trajets" style="font-size: 1.3rem;">
+      <a href="Vos trajets.html" target="_top" style="text-decoration: none; color: black;">Vos trajets</a>
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2 text-center" id="espace" style="font-size: 1.3rem;">
+      <a href="Mon espace.html" target="_top" style="text-decoration: none; color: black;">Mon espace</a>
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2 text-center" id="Contacs" style="font-size: 1.3rem;">
+      <a href="Contacts.html" target="_top" style="text-decoration: none; color: black;">Contacts</a>
+    </div>
+    <div class=" col-sm-2 col-md-2 col-lg-2 text-center login">
+      <div class="dropdown">
+        <button class="Loginbutton dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="border: none; background-color: transparent;">
+          <span class="Seconnecter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="var(--bs-main-color)" class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+            </svg>
+          </span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="Connexion.html" style="--bs-dropdown-link-hover-bg: var(--bs-main-color);">Se connecter</a></li>
+          <li><a class="dropdown-item" href="Connexion.html" style="--bs-dropdown-link-hover-bg: var(--bs-main-color);">S'inscrire</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Tripresult -->
+  <div class="container bg-complementary-color mt-5" id="Tripresult">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center">
+        <button id="Tripresultbutton" class="mt-4 align-items-center justify-content-between" style="width: 100%;">
+          <div class="d-flex justify-content-between w-100">
+            <div>
+              <p id="Valuedeparture" class="text-center"></p>
+              <p id="Datedeparture"></p>
+            </div>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16" id="pencil">
+                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <!-- Tripresultdate -->
+      <div class="col-lg-12 col-md-12 col-sm-12 mt-3" id="Tripresultdate" style="height: fit-content;">
+        <button class="btn btn-outline-info me-2"></button>
+        <button class="btn btn-outline-info me-2"></button>
+        <button class="btn btn-outline-info me-2"></button>
+        <button class="btn btn-outline-info me-2"></button>
+        <button class="btn btn-outline-info"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aller -->
+  <div class="col-lg-8 col-md-8 col-sm-8 d-flex justify-content-center mt-3">
+    <p style="font-weight: bold; margin-left: 1rem; font-size: 1.3rem;">Aller:</p>
+  </div>
+
+  <!-- Triplsit -->
+  <div class="container" id="Triplist" style="height: auto;">
+      <button class="col-lg-12 col-md-12 col-sm-12" style="background-color: transparent; border: 0;" onclick="">
+      <div class="col-lg-12 col-md-12 col-sm-12" id="Trip" style="height: auto;">   
+        <div class="col-lg-12 col-md-12 col-sm-12 mt-3">
+          <p id="Tripstart"></p>
+          <p id="Tripend"></p>
+        </div>
+        <div class="container d-flex align-items-center justify-content-between mt-4">
+          <div class="row">
+            <p id="Triplength">Direct</p>
+          </div>
+          <div class="row">
+            <p id="TripPrice"> 
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16">
+                <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z"/>
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/>
+              </svg>
+            </p>
+          </div>
+        </div>
+      </div>
+    </button>
+  </div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted mt-5">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Company name
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Angular</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">React</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Vue</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Laravel</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2025 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+<script src="Resultat.js"></script>
+</body>
+</html>
+
+
