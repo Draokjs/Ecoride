@@ -18,26 +18,26 @@
 <header>  
   <nav>
     <!-- Logo -->
-    <div class="container-fluid d-flex gap-3">
+    <div class="container-fluid gap-3">
       <div class="row d-flex align-items-center bg-body-tertiary">
-        <div class="col-sm-2 col-md-2 col-lg-2">
+        <div class="col-md-2">
           <img src="Image/Logo.png" alt="Logo">
         </div>
         <!-- Links -->
-        <div class="col-sm-2 col-md-2 col-lg-2 text-center fs-4 menu-item" id="accueil">
+        <div class="col-md-2 text-center fs-4 menu-item" id="accueil">
           <a class="nav-link" href="Index.html" target="_self">Accueil</a>
         </div>
-        <div class="col-sm-2 col-md-2 col-lg-2 text-center fs-4 menu-item" id="trajets">
+        <div class="col-md-2 text-center fs-4 menu-item" id="trajets">
           <a class="nav-link" href="Resultat.html" target="_self">Vos trajets</a>
         </div>
-        <div class="col-sm-2 col-md-2 col-lg-2 text-center fs-4 menu-item" id="espace">
+        <div class="col-md-2 text-center fs-4 menu-item" id="espace">
           <a class="nav-link" href="Mon espace.html" target="_self">Mon espace</a>
         </div>
-        <div class="col-sm-2 col-md-2 col-lg-2 text-center fs-4 menu-item" id="Contacts">
+        <div class="col-md-2 text-center fs-4 menu-item" id="Contacts">
           <a class="nav-link" href="Contacts.html" target="_self">Contacts</a>
         </div>
         <!-- Dropdown menu -->
-        <div class="col-sm-2 col-md-2 col-lg-2 text-center login">
+        <div class="col-md-2 text-center login">
           <div class="dropdown">
             <button class="Loginbutton dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="border: none; background-color: transparent;">
               <span class="Seconnecter">
@@ -59,84 +59,72 @@
   </nav>
 </header>
 
-  <!-- Search form -->
-<main>
-<!-- Trajets villes -->
-<div class="d-flex gap-4 flex-wrap">
-<section aria-label="search form" class="form" autocomplete="off" style="flex: 1 1 40%;">
-    <form class="container p-4 rounded w-40 w-md-75 w-lg-50" id="search" method="GET" action="Resultat.html">
-        <div class="row mt-1">
-          <div class="col-md-12">
-            <p class="text-center fs-4">
-              Itinéraire
-            </p>
-        <!-- Ville de départ -->
-        <div class="row depart">
-          <div class="col-md-5">
-            <div class="input-group">
-              <label for="departure-city" class="form-label fs-5">Ville de départ</label>
-              <input type="text" class="form-control fs-4" placeholder="Ville de départ" id="departure-city"  name="Ville_départ">
-            </div>
-          </div>
-          
-          <!-- Invert arrow -->
-          <div class="col-md-2 d-flex justify-content-center align-items-center">
-            <button class="btn btn-complementary-color" id="arrow" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
-              </svg>
-            </button>
-          </div>
+  <div class="container-fluid" >
+    <div class="row">
+    <!-- Form -->
+    <!-- Trajets villes -->
+    <section aria-label="search form" class="form" autocomplete="off">
+        <div class="col-md-12 d-flex justify-content-center">
+        <form class="p-4 rounded" id="search" method="GET" action="Resultat.html">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="text-center fs-4">Itinéraire</p>
 
-          <!-- Ville d'arrivée -->
-          <div class="col-md-5 arrivée">
-            <div class="input-group">
-              <label for="arrival-city" class="form-label fs-5">Ville d'arrivee</label>
-              <input type="text" class="form-control fs-4" placeholder="Ville d'arrivée" id="arrival-city" name="Ville_d'arrivée">
+              <!-- Ville de départ -->
+              <div class="row depart mb-3">
+                <div class="col-md-5">
+                  <label for="departure-city" class="form-label fs-5">Ville de départ</label>
+                  <input type="text" class="form-control fs-4" placeholder="Ville de départ" id="departure-city" name="Ville_départ">
+                </div>
+
+                <!-- Invert arrow -->
+                <div class="col-md-2 d-flex justify-content-center align-items-center">
+                  <button class="btn btn-complementary-color" id="arrow" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Ville d'arrivée -->
+                <div class="col-md-5">
+                  <label for="arrival-city" class="form-label fs-5">Ville d'arrivée</label>
+                  <input type="text" class="form-control fs-4" placeholder="Ville d'arrivée" id="arrival-city" name="Ville_d'arrivée">
+                </div>
+              </div>
+
+              <!-- Date trajets -->
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="DepartureDate" class="form-label fs-5">Date de départ</label>
+                  <input type="date" class="form-control fs-4" id="DepartureDate" name="date_depart">
+                </div>
+                <div class="col-md-6">
+                  <label for="ArrivalDate" class="form-label fs-5">Date d'arrivée</label>
+                  <input type="date" class="form-control fs-4" id="ArrivalDate" name="date_arrivee">
+                </div>
+              </div>
+
+              <!-- Passagers -->
+              <div class="row mb-3">
+                <div class="col-md-12">
+                  <label for="Passengers" class="form-label fs-5">Passagers</label>
+                  <input type="number" class="form-control fs-4" placeholder="Nombre de passagers" id="Passengers" name="nombre_passagers" min="1" max="5">
+                </div>
+              </div>
+
+              <!-- Recherche button -->
+              <div class="row mt-4">
+                <div class="col-md-12 d-flex justify-content-center">
+                  <button type="submit" class="btn btn-complementary-color fs-5" id="submit">Rechercher</button>
+                </div>
+              </div>
+
             </div>
           </div>
-        </div>
-        
-        <!-- Date trajets -->
-        <div class="row">
-          <div class="col-md-12 mt-3"> 
-            <p class="text-center fs-4">
-              Dates départ / Dates d'arrivée
-            </p>
-            <div class="input-group">
-              <label for="DepartureDate" class="form-label fs-5">Date de départ:</label>
-              <input type="date" class="form-control fs-4" placeholder="Date" id="DepartureDate" name="date_depart">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 "> 
-            <div class="input-group">
-              <label for="ArrivalDate" class="form-label fs-5">Date de d'arrivee:</label>
-              <input type="date" class="form-control fs-4" placeholder="Date" id="ArrivalDate" name="date_arrivee">
-            </div>
-          </div>
-        </div>
-      <!-- Passagers -->
-        <div class="row">
-          <div class="col-md-12 mt-3">
-            <p class="text-center fs-4">
-              Passagers
-            </p>
-          <label for="Passengers" class="form-label fs-5">Passagers</label>
-          <input type="number" class="form-control fs-4" placeholder="Nombre de passagers" id="Passengers" name="nombre_passagers" min="1" max="5">
-          </div>
-        </div>
-        <!-- Research button -->
-        <div class="col-md-12 mt-4">
-          <div class="row mx-5">
-            <button type="submit" class="btn btn-complementary-color fs-5" id="submit"> Rechercher </button>
-          </div>
-        </div>
-      </form>
+        </form>
       </section>
     </div>
- </main>
 
 <!-- Description text et images -->
 <section aria-label="Description et images">
@@ -160,6 +148,8 @@
       </p>
     </div>
   </div>
+    </div>
+    </div>
     </div>
 </section>
 
@@ -209,10 +199,10 @@
               </svg>Draokjs
             </a>
           </p>
+        </section>
         </div>  
       </div>
     </div>
-  </section>
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">

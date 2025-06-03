@@ -104,3 +104,4 @@ document.getElementById("search").addEventListener("submit", (event) => {
     window.open("Resultat.html", "_top");
   }
 });
+
