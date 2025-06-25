@@ -17,6 +17,9 @@
 
 /* Triplist btn */
 #modifyButton {
+  display: block;
+  width: 50px;
+  margin-right: 10px;
   border: none;
   background: none;
 }

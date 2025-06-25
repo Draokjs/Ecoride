@@ -1,7 +1,11 @@
-#form_connexion {
+.connexionForm {
+  display: flex;
   background-color: var(--bs-main-color);
-  width: fit-content; 
-  height: 35vh; 
+  width: fit-content;
+  height: 26vh;
   border-radius: 5%;
-  padding: 20px;
+  margin: auto;
+  margin-top: 20vh;
+  height: 32vh;
+  margin-bottom: -50VH;
 }

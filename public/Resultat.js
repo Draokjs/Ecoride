@@ -80,7 +80,7 @@ myForm.addEventListener("submit", function(event) {
   const dateArrivalInput = myForm.querySelector("#ArrivalDate");
   const passengersInput = myForm.querySelector("#Passengers");
 
-  // Simple empty check:
+  // Empty check:
   if (
     !departureInput.value.trim() ||
     !arrivalInput.value.trim() ||
@@ -92,7 +92,6 @@ myForm.addEventListener("submit", function(event) {
     return;
   }
 
-  // You can add more validation here as needed (dates, passengers count, etc.)
   alert("Form submitted!");
 });
 

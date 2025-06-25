@@ -29,7 +29,7 @@
     transform: scale(1.2);
   }
 
-/* Submit button */
+  /* Submit button */
   #submit {
     background-color: var(--bs-complementary-color);
     font-size: 1.5rem;
