@@ -1,0 +1,7 @@
+#form_connexion {
+  background-color: var(--bs-main-color);
+  width: fit-content; 
+  height: 35vh; 
+  border-radius: 5%;
+  padding: 20px;
+}

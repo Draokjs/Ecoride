@@ -1,0 +1,14 @@
+#Inscription {
+  background-color: var(--bs-main-color);
+  height: 42vh;
+  border-radius: 5%;
+}
+
+#Registerbutton {
+  border: none;
+  background-color: var(--bs-complementary-color);
+  border-radius: 5%;
+  color: white;
+  width: 12vw;
+  height: 4vh;
+}
