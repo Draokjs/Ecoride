@@ -1,0 +1,11 @@
+// style.scss
+
+@use "./custom-variables" as *;
+
+@use "~bootstrap/scss/bootstrap" with (
+  $theme-colors: $theme-colors
+);
+
+.test-custom-color {
+  color: map-get($theme-colors, "main-color");
+}

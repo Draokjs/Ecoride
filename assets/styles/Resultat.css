@@ -1,0 +1,55 @@
+/* Tripresult box */
+#Tripresult {
+  width: 50vw;
+  box-shadow: -4px -4px 0 #6e4695;
+}
+
+/* Trip departure value */
+#Valuedeparture {
+  font-size: 1.5rem;
+  color: white;
+}
+
+#Datedeparture {
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Triplist btn */
+#modifyButton {
+  display: block;
+  width: 50px;
+  margin-right: 10px;
+  border: none;
+  background: none;
+}
+#pencil {
+  color: white;
+}
+
+#pencil:hover {
+  color: var(--bs-main-color);
+}
+
+/* Trip carpool */
+#Triplist {
+  height: fit-content;
+  width: 50vw;
+  box-shadow: -3px -3px 0 var(--bs-complementary-color);
+  border: 1px solid var(--bs-complementary-color); 
+  border-radius: 5%;
+  overflow-y: auto;
+}
+
+#bookTrip {
+  background-color: var(--bs-main-color);
+  color: white;
+}
+
+.form {
+  margin-left: 35%;
+}
+
+.clearfix {
+  clear: both;
+}

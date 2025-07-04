@@ -1,0 +1,31 @@
+.inscription {
+  background-color: var(--bs-main-color);
+  height: 44vh;
+  width: fit-content;
+  border-radius: 5%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+h2 {
+display: flex; justify-content: center;
+}
+
+
+#Registerbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border: none;
+  background-color: var(--bs-complementary-color);
+  border-radius: 5%;
+  color: white;
+  width: 12vw;
+  height: 4vh;
+  border-radius: 5%;
+}
+
+footer {
+  margin-top: 10vh;
+}

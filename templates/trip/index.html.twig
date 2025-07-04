@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% include 'partials/header.html.twig' %}
+{% block title %}Liste des trajets{% endblock %}
+
+{% block body %}
+  <h1>Liste des covoiturages</h1>
+
+  <form method="GET" action="{{ path('trip_search') }}">
+    <label for="villeDepart">Ville de départ:</label>
+    <input type="text" id="villeDepart" name="villeDepart" autocomplete="off" data-type="depart" class="autocomplete">
+    <ul id="suggestions-depart" class="suggestions-list"></ul>
+
+    <label for="villeArrivee">Ville d’arrivée:</label>
+    <input type="text" id="villeArrivee" name="villeArrivee" autocomplete="off" data-type="arrivee" class="autocomplete">
+    <ul id="suggestions-arrivee" class="suggestions-list"></ul>
+
+    <button type="submit">Rechercher</button>
+  </form>
+
+  <script>
+    function setupAutocomplete(inputId, suggestionsId, type) {
+      const input = document.getElementById(inputId);
+      const list = document.getElementById(suggestionsId);
+
+      input.addEventListener('input', () => {
+        const query = input.value;
+
+        if (query.length < 2) {
+          list.innerHTML = '';
+          return;
+        }
+
+        fetch(`/trip/autocomplete?q=${query}&type=${type}`)
+          .then(res => res.json())
+          .then(data => {
+            list.innerHTML = '';
+
+            if (data.length === 0) {
+              const li = document.createElement('li');
+              li.textContent = 'Aucune ville trouvée';
+              list.appendChild(li);
+              return;
+            }
+
+            data.forEach(city => {
+              const li = document.createElement('li');
+              li.textContent = city;
+              li.addEventListener('click', () => {
+                input.value = city;
+                list.innerHTML = '';
+              });
+              list.appendChild(li);
+            });
+          });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!list.contains(e.target) && e.target !== input) {
+          list.innerHTML = '';
+        }
+      });
+    }
+
+    setupAutocomplete('villeDepart', 'suggestions-depart', 'depart');
+    setupAutocomplete('villeArrivee', 'suggestions-arrivee', 'arrivee');
+  </script>
+{% endblock %}

@@ -1,0 +1,36 @@
+<header>
+  <nav>
+    <div class="container-fluid gap-3">
+      <div class="row d-flex align-items-center bg-body-tertiary">
+        <div class="col-md-2">
+          <img src="{{ asset('Image/Logo.png') }}" alt="Logo" />
+        </div>
+        <div class="col-md-2 text-center fs-4 menu-item" id="accueil">
+          <a class="nav-link" href="{{ path('home') }}">Accueil</a>
+        </div>
+        <div class="col-md-2 text-center fs-4 menu-item" id="trajets">
+          <a class="nav-link" href="{{ path('trip_resultat') }}">Vos trajets</a>
+        </div>
+        <div class="col-md-2 text-center fs-4 menu-item" id="espace">
+        <a class="nav-link" href="{{ path('mon_espace') }}">Mon espace</a>
+        </div>
+        <div class="col-md-2 text-center fs-4 menu-item" id="Contacts">
+        <a class="nav-link" href="{{ path('contact') }}">Contacts</a>        
+        </div>
+        <div class="col-md-2 text-center login">
+          <div class="dropdown">
+            <button class="Loginbutton dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="border: none; background-color: transparent;">
+              <span class="Seconnecter">
+                <!-- SVG icon here -->
+              </span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="{{ path('login') }}">Se connecter</a></li>
+              <li><a class="dropdown-item" href="{{ path('register') }}">S'inscrire</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

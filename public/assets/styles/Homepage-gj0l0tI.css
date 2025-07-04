@@ -1,0 +1,76 @@
+/* Menu link*/
+.nav-link {
+    text-decoration: none; 
+    color: black;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    background-color: #19aea3;
+    opacity: 0.8;
+    height: 100%;
+  }
+
+/* Background */
+.form {
+  background-image: url("../images/green-nature-road-high-quality-desktop-gb0j67jya0bilxuq-osyR4P7.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* Arrow rotation */
+  #arrow {
+    transition: transform 0.3s ease;
+    transform: translateY(20px);
+  }
+
+  #arrow:active {
+    transform: scale(1.2);
+  }
+
+  /* Submit button */
+  #submit {
+    background-color: var(--bs-complementary-color);
+    font-size: 1.5rem;
+  }
+
+  /* Dropdown item */
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--bs-main-color);
+}
+
+/* Search */
+#search {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--bs-main-color);
+}
+
+/* Image description  */
+#Descriptionimage img {
+  width: 80%;
+  height: auto;
+}
+
+/* Dropdown */
+ #dropdownMenuButton1{
+  border: none; 
+  background-color: transparent;
+}
+
+/* ERROR message */
+
+.error-message {
+  color: red;
+  font-size: 0.85em;
+}
+input:invalid {
+  border-color: red;
+}
+
+main {
+  margin-bottom: 70vh;
+  max-height: fit-content;
+}
