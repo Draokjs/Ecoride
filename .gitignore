@@ -58,3 +58,9 @@ build/
 .vscode/
 .DS_Store
 Thumbs.db
+
+
+.phpunit.cache/
+assets/vendor/
+public/assets/vendor/
+
