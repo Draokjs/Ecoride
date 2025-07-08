@@ -1,8 +1,60 @@
-vendor/
-
-###> symfony/webpack-encore-bundle ###
-/node_modules/
+### Symfony (Modern) ###
+/var/cache/
+/var/log/
+/var/sessions/
+/var/bootstrap.php.cache
+/vendor/
+.env
+.env.local
+.env.*.local
+/public/uploads/
 /public/build/
-npm-debug.log
-yarn-error.log
-###< symfony/webpack-encore-bundle ###
+/bin/*
+!bin/console
+
+# Doctrine entity backups
+**/Entity/*~
+
+# Web server PID
+/.web-server-pid
+
+### Node ###
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+coverage/
+.nyc_output/
+dist/
+build/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.docusaurus/
+.serverless/
+.webpack/
+.svelte-kit
+.yarn/*
+.pnp.*
+*.log
+
+# TypeScript
+*.tsbuildinfo
+
+# Lint + test cache
+.eslintcache
+.stylelintcache
+.rpt2_cache/
+.rts2_cache_*/
+
+# dotenv
+.env.*
+!.env.dist
+
+### IDEs / OS ###
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
