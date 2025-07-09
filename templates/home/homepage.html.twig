@@ -8,7 +8,7 @@
 
 {% block body %}
 {{ form_start(form, { 
-    'attr': { 'class': 'p-4 rounded', 'id': 'search' }, 
+    'attr': { 'class': 'p-4 rounded', 'id': 'search' },
     'method': 'GET', 
     'action': path('resultat') 
 }) }}
@@ -17,16 +17,26 @@
 
 <div class="row depart mb-3">
   <div class="col-md-5">
-    <input list="cities" name="villeDepart" id="villeDepart" class="form-control fs-4" placeholder="Ville de départ" />
     <datalist id="cities">
         {% for city in cities %}
             <option value="{{ city }}">
         {% endfor %}
     </datalist>
+
+    {{ form_row(form.Ville_depart, { 
+        'attr': {
+          'list': 'cities', 
+          'class': 'form-control fs-4', 
+          'placeholder': 'Ville de départ', 
+          'id': 'villeDepart'
+        },
+        'label_attr': {'class': 'form-label fs-5'}
+    }) }}
+    <span id="error-villeDepart" class="error-message text-danger fs-6"></span>
   </div>
 
   <div class="col-md-2 d-flex justify-content-center align-items-center">
-    <button class="btn btn-complementary-color" id="arrow" type="button">
+    <button class="btn btn-complementary-color" id="arrow" type="button" aria-label="Échanger villes">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5"/>
       </svg>
@@ -34,22 +44,53 @@
   </div>
 
   <div class="col-md-5">
-    {{ form_row(form.Ville_arrivee, {'attr': {'class': 'form-control fs-4', 'placeholder': 'Ville d\'arrivée'}, 'label_attr': {'class': 'form-label fs-5'}}) }}
+    {{ form_row(form.Ville_arrivee, { 
+        'attr': {
+          'class': 'form-control fs-4', 
+          'placeholder': "Ville d'arrivée", 
+          'id': 'villeArrivee'
+        },
+        'label_attr': {'class': 'form-label fs-5'}
+    }) }}
+    <span id="error-villeArrivee" class="error-message text-danger fs-6"></span>
   </div>
 </div>
 
 <div class="row mb-3">
   <div class="col-md-6">
-    {{ form_row(form.date_depart, {'attr': {'class': 'form-control fs-4', 'placeholder': 'Date de départ'}, 'label_attr': {'class': 'form-label fs-5'}}) }}
+    {{ form_row(form.date_depart, {
+      'attr': {
+        'class': 'form-control fs-4',
+        'placeholder': 'Date de départ',
+        'id': 'dateDepart'
+      },
+      'label_attr': {'class': 'form-label fs-5'}
+    }) }}
+    <span id="error-dateDepart" class="error-message text-danger fs-6"></span>
   </div>
   <div class="col-md-6">
-    {{ form_row(form.date_arrivee, {'attr': {'class': 'form-control fs-4', 'placeholder': 'Date d\'arrivée'}, 'label_attr': {'class': 'form-label fs-5'}}) }}
+    {{ form_row(form.date_arrivee, {
+      'attr': {
+        'class': 'form-control fs-4',
+        'placeholder': 'Date d\'arrivée',
+        'id': 'dateArrivee'
+      },
+      'label_attr': {'class': 'form-label fs-5'}
+    }) }}
+    <span id="error-dateArrivee" class="error-message text-danger fs-6"></span>
   </div>
 </div>
 
 <div class="row mb-3">
   <div class="col-md-12">
-    {{ form_row(form.nombre_passagers, {'attr': {'class': 'form-control fs-4'}, 'label_attr': {'class': 'form-label fs-5'}}) }}
+    {{ form_row(form.nombre_passagers, {
+      'attr': {
+        'class': 'form-control fs-4',
+        'id': 'passengers'
+      },
+      'label_attr': {'class': 'form-label fs-5'}
+    }) }}
+    <span id="error-passengers" class="error-message text-danger fs-6"></span>
   </div>
 </div>
 
@@ -66,7 +107,7 @@
   <!-- Description 1 -->
   <div class="row align-items-center my-5">
     <div class="col-md-6 Descriptiontext">
-      <p class="fs-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequatur beatae veniam? Illum quidem molestias est corporis, unde delectus amet! Vel cumque maxime alias vero cum. Veritatis, modi. Deleniti, eligendi?
+      <p class="fs-4">Ecoride est une plateforme de covoiturage dédiée à la protection de notre planète. Nous encourageons des trajets partagés, réduisant ainsi l’empreinte carbone de chacun. Notre priorité est de privilégier les voitures électriques pour un transport plus propre et plus respectueux de l’environnement. Ensemble, contribuons à préserver la santé de la Terre tout en voyageant malin. Rejoignez Ecoride et faites le choix d’un avenir durable !
       </p>
     </div>
     <div class="col-md-6 Descriptionimage">
@@ -79,7 +120,7 @@
       <img src="{{ asset('Image/Green2.jpg') }}" alt="Car" class="img-fluid rounded" id="image2">        
     </div>
     <div class="col-md-6 Descriptiontext">
-      <p class="fs-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequatur beatae veniam? Illum quidem molestias est corporis, unde delectus amet! Vel cumque maxime alias vero cum. Veritatis, modi. Deleniti, eligendi?
+      <p class="fs-4">Pour cela, Ecoride met à votre disposition un réseau simple et efficace favorisant les déplacements en voitures électriques. Chaque trajet partagé permet de réduire les émissions polluantes et d’encourager une mobilité plus responsable. En choisissant Ecoride, vous devenez acteur du changement et participez à la construction d’un futur plus vert. Engageons-nous ensemble pour un monde où voyager rime avec respect de la nature.
       </p>
     </div>
   </div>

@@ -83,16 +83,19 @@ class __TwigTemplate_6a69e4374a3d155db190ac36ef1a1ff8 extends Template
           <div class=\"dropdown\">
             <button class=\"Loginbutton dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton1\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" style=\"border: none; background-color: transparent;\">
               <span class=\"Seconnecter\">
-                <!-- SVG icon here -->
+                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"30\" height=\"30\" fill=\"var(--bs-complementary-color)\" class=\"bi bi-person-circle\" viewBox=\"0 0 16 16\">
+                  <path d=\"M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0\" />
+                  <path fill-rule=\"evenodd\" d=\"M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z\" />
+                </svg>
               </span>
             </button>
             <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton1\">
               <li><a class=\"dropdown-item\" href=\"";
-        // line 28
+        // line 31
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("login");
         yield "\">Se connecter</a></li>
               <li><a class=\"dropdown-item\" href=\"";
-        // line 29
+        // line 32
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
         yield "\">S'inscrire</a></li>
             </ul>
@@ -132,7 +135,7 @@ class __TwigTemplate_6a69e4374a3d155db190ac36ef1a1ff8 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  96 => 29,  92 => 28,  79 => 18,  73 => 15,  67 => 12,  61 => 9,  55 => 6,  48 => 1,);
+        return array (  99 => 32,  95 => 31,  79 => 18,  73 => 15,  67 => 12,  61 => 9,  55 => 6,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -160,7 +163,10 @@ class __TwigTemplate_6a69e4374a3d155db190ac36ef1a1ff8 extends Template
           <div class=\"dropdown\">
             <button class=\"Loginbutton dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton1\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" style=\"border: none; background-color: transparent;\">
               <span class=\"Seconnecter\">
-                <!-- SVG icon here -->
+                <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"30\" height=\"30\" fill=\"var(--bs-complementary-color)\" class=\"bi bi-person-circle\" viewBox=\"0 0 16 16\">
+                  <path d=\"M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0\" />
+                  <path fill-rule=\"evenodd\" d=\"M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z\" />
+                </svg>
               </span>
             </button>
             <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton1\">

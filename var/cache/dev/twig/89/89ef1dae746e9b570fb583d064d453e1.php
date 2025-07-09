@@ -134,14 +134,13 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
 
 <div class=\"row depart mb-3\">
   <div class=\"col-md-5\">
-    <input list=\"cities\" name=\"villeDepart\" id=\"villeDepart\" class=\"form-control fs-4\" placeholder=\"Ville de départ\" />
     <datalist id=\"cities\">
         ";
-        // line 22
+        // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["cities"]) || array_key_exists("cities", $context) ? $context["cities"] : (function () { throw new RuntimeError('Variable "cities" does not exist.', 22, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["cities"]) || array_key_exists("cities", $context) ? $context["cities"] : (function () { throw new RuntimeError('Variable "cities" does not exist.', 21, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["city"]) {
-            // line 23
+            // line 22
             yield "            <option value=\"";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["city"], "html", null, true);
             yield "\">
@@ -150,12 +149,19 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['city'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 24
         yield "    </datalist>
+
+    ";
+        // line 26
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), "Ville_depart", [], "any", false, false, false, 26), 'row', ["attr" => ["list" => "cities", "class" => "form-control fs-4", "placeholder" => "Ville de départ", "id" => "villeDepart"], "label_attr" => ["class" => "form-label fs-5"]]);
+        // line 34
+        yield "
+    <span id=\"error-villeDepart\" class=\"error-message text-danger fs-6\"></span>
   </div>
 
   <div class=\"col-md-2 d-flex justify-content-center align-items-center\">
-    <button class=\"btn btn-complementary-color\" id=\"arrow\" type=\"button\">
+    <button class=\"btn btn-complementary-color\" id=\"arrow\" type=\"button\" aria-label=\"Échanger villes\">
       <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-arrow-down-up\" viewBox=\"0 0 16 16\">
         <path fill-rule=\"evenodd\" d=\"M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5\"/>
       </svg>
@@ -164,33 +170,41 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
 
   <div class=\"col-md-5\">
     ";
-        // line 37
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), "Ville_arrivee", [], "any", false, false, false, 37), 'row', ["attr" => ["class" => "form-control fs-4", "placeholder" => "Ville d'arrivée"], "label_attr" => ["class" => "form-label fs-5"]]);
+        // line 47
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 47, $this->source); })()), "Ville_arrivee", [], "any", false, false, false, 47), 'row', ["attr" => ["class" => "form-control fs-4", "placeholder" => "Ville d'arrivée", "id" => "villeArrivee"], "label_attr" => ["class" => "form-label fs-5"]]);
+        // line 54
         yield "
+    <span id=\"error-villeArrivee\" class=\"error-message text-danger fs-6\"></span>
   </div>
 </div>
 
 <div class=\"row mb-3\">
   <div class=\"col-md-6\">
     ";
-        // line 43
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 43, $this->source); })()), "date_depart", [], "any", false, false, false, 43), 'row', ["attr" => ["class" => "form-control fs-4", "placeholder" => "Date de départ"], "label_attr" => ["class" => "form-label fs-5"]]);
+        // line 61
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 61, $this->source); })()), "date_depart", [], "any", false, false, false, 61), 'row', ["attr" => ["class" => "form-control fs-4", "placeholder" => "Date de départ", "id" => "dateDepart"], "label_attr" => ["class" => "form-label fs-5"]]);
+        // line 68
         yield "
+    <span id=\"error-dateDepart\" class=\"error-message text-danger fs-6\"></span>
   </div>
   <div class=\"col-md-6\">
     ";
-        // line 46
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 46, $this->source); })()), "date_arrivee", [], "any", false, false, false, 46), 'row', ["attr" => ["class" => "form-control fs-4", "placeholder" => "Date d'arrivée"], "label_attr" => ["class" => "form-label fs-5"]]);
+        // line 72
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 72, $this->source); })()), "date_arrivee", [], "any", false, false, false, 72), 'row', ["attr" => ["class" => "form-control fs-4", "placeholder" => "Date d'arrivée", "id" => "dateArrivee"], "label_attr" => ["class" => "form-label fs-5"]]);
+        // line 79
         yield "
+    <span id=\"error-dateArrivee\" class=\"error-message text-danger fs-6\"></span>
   </div>
 </div>
 
 <div class=\"row mb-3\">
   <div class=\"col-md-12\">
     ";
-        // line 52
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 52, $this->source); })()), "nombre_passagers", [], "any", false, false, false, 52), 'row', ["attr" => ["class" => "form-control fs-4"], "label_attr" => ["class" => "form-label fs-5"]]);
+        // line 86
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 86, $this->source); })()), "nombre_passagers", [], "any", false, false, false, 86), 'row', ["attr" => ["class" => "form-control fs-4", "id" => "passengers"], "label_attr" => ["class" => "form-label fs-5"]]);
+        // line 92
         yield "
+    <span id=\"error-passengers\" class=\"error-message text-danger fs-6\"></span>
   </div>
 </div>
 
@@ -201,8 +215,8 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
 </div>
 
 ";
-        // line 62
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 62, $this->source); })()), 'form_end');
+        // line 103
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 103, $this->source); })()), 'form_end');
         yield "
 
 <!-- Description text et images -->
@@ -210,12 +224,12 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
   <!-- Description 1 -->
   <div class=\"row align-items-center my-5\">
     <div class=\"col-md-6 Descriptiontext\">
-      <p class=\"fs-4\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequatur beatae veniam? Illum quidem molestias est corporis, unde delectus amet! Vel cumque maxime alias vero cum. Veritatis, modi. Deleniti, eligendi?
+      <p class=\"fs-4\">Ecoride est une plateforme de covoiturage dédiée à la protection de notre planète. Nous encourageons des trajets partagés, réduisant ainsi l’empreinte carbone de chacun. Notre priorité est de privilégier les voitures électriques pour un transport plus propre et plus respectueux de l’environnement. Ensemble, contribuons à préserver la santé de la Terre tout en voyageant malin. Rejoignez Ecoride et faites le choix d’un avenir durable !
       </p>
     </div>
     <div class=\"col-md-6 Descriptionimage\">
       <img src=\"";
-        // line 73
+        // line 114
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Image/Green1.jpg"), "html", null, true);
         yield "\" alt=\"Car\" class=\"img-fluid rounded\" id=\"image1\">        
     </div>
@@ -224,12 +238,12 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
   <div class=\"row align-items-center my-5\">
     <div class=\"col-md-6 Descriptionimage\">
       <img src=\"";
-        // line 79
+        // line 120
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Image/Green2.jpg"), "html", null, true);
         yield "\" alt=\"Car\" class=\"img-fluid rounded\" id=\"image2\">        
     </div>
     <div class=\"col-md-6 Descriptiontext\">
-      <p class=\"fs-4\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequatur beatae veniam? Illum quidem molestias est corporis, unde delectus amet! Vel cumque maxime alias vero cum. Veritatis, modi. Deleniti, eligendi?
+      <p class=\"fs-4\">Pour cela, Ecoride met à votre disposition un réseau simple et efficace favorisant les déplacements en voitures électriques. Chaque trajet partagé permet de réduire les émissions polluantes et d’encourager une mobilité plus responsable. En choisissant Ecoride, vous devenez acteur du changement et participez à la construction d’un futur plus vert. Engageons-nous ensemble pour un monde où voyager rime avec respect de la nature.
       </p>
     </div>
   </div>
@@ -245,7 +259,7 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
         yield from [];
     }
 
-    // line 90
+    // line 131
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -258,7 +272,7 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 91
+        // line 132
         yield "    ";
         yield $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         yield "
@@ -293,7 +307,7 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  262 => 91,  249 => 90,  228 => 79,  219 => 73,  205 => 62,  192 => 52,  183 => 46,  177 => 43,  168 => 37,  154 => 25,  145 => 23,  141 => 22,  131 => 14,  129 => 10,  116 => 9,  102 => 6,  89 => 5,  66 => 3,  43 => 1,);
+        return array (  276 => 132,  263 => 131,  242 => 120,  233 => 114,  219 => 103,  206 => 92,  204 => 86,  195 => 79,  193 => 72,  187 => 68,  185 => 61,  176 => 54,  174 => 47,  159 => 34,  157 => 26,  153 => 24,  144 => 22,  140 => 21,  131 => 14,  129 => 10,  116 => 9,  102 => 6,  89 => 5,  66 => 3,  43 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -308,7 +322,7 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
 
 {% block body %}
 {{ form_start(form, { 
-    'attr': { 'class': 'p-4 rounded', 'id': 'search' }, 
+    'attr': { 'class': 'p-4 rounded', 'id': 'search' },
     'method': 'GET', 
     'action': path('resultat') 
 }) }}
@@ -317,16 +331,26 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
 
 <div class=\"row depart mb-3\">
   <div class=\"col-md-5\">
-    <input list=\"cities\" name=\"villeDepart\" id=\"villeDepart\" class=\"form-control fs-4\" placeholder=\"Ville de départ\" />
     <datalist id=\"cities\">
         {% for city in cities %}
             <option value=\"{{ city }}\">
         {% endfor %}
     </datalist>
+
+    {{ form_row(form.Ville_depart, { 
+        'attr': {
+          'list': 'cities', 
+          'class': 'form-control fs-4', 
+          'placeholder': 'Ville de départ', 
+          'id': 'villeDepart'
+        },
+        'label_attr': {'class': 'form-label fs-5'}
+    }) }}
+    <span id=\"error-villeDepart\" class=\"error-message text-danger fs-6\"></span>
   </div>
 
   <div class=\"col-md-2 d-flex justify-content-center align-items-center\">
-    <button class=\"btn btn-complementary-color\" id=\"arrow\" type=\"button\">
+    <button class=\"btn btn-complementary-color\" id=\"arrow\" type=\"button\" aria-label=\"Échanger villes\">
       <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-arrow-down-up\" viewBox=\"0 0 16 16\">
         <path fill-rule=\"evenodd\" d=\"M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5\"/>
       </svg>
@@ -334,22 +358,53 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
   </div>
 
   <div class=\"col-md-5\">
-    {{ form_row(form.Ville_arrivee, {'attr': {'class': 'form-control fs-4', 'placeholder': 'Ville d\\'arrivée'}, 'label_attr': {'class': 'form-label fs-5'}}) }}
+    {{ form_row(form.Ville_arrivee, { 
+        'attr': {
+          'class': 'form-control fs-4', 
+          'placeholder': \"Ville d'arrivée\", 
+          'id': 'villeArrivee'
+        },
+        'label_attr': {'class': 'form-label fs-5'}
+    }) }}
+    <span id=\"error-villeArrivee\" class=\"error-message text-danger fs-6\"></span>
   </div>
 </div>
 
 <div class=\"row mb-3\">
   <div class=\"col-md-6\">
-    {{ form_row(form.date_depart, {'attr': {'class': 'form-control fs-4', 'placeholder': 'Date de départ'}, 'label_attr': {'class': 'form-label fs-5'}}) }}
+    {{ form_row(form.date_depart, {
+      'attr': {
+        'class': 'form-control fs-4',
+        'placeholder': 'Date de départ',
+        'id': 'dateDepart'
+      },
+      'label_attr': {'class': 'form-label fs-5'}
+    }) }}
+    <span id=\"error-dateDepart\" class=\"error-message text-danger fs-6\"></span>
   </div>
   <div class=\"col-md-6\">
-    {{ form_row(form.date_arrivee, {'attr': {'class': 'form-control fs-4', 'placeholder': 'Date d\\'arrivée'}, 'label_attr': {'class': 'form-label fs-5'}}) }}
+    {{ form_row(form.date_arrivee, {
+      'attr': {
+        'class': 'form-control fs-4',
+        'placeholder': 'Date d\\'arrivée',
+        'id': 'dateArrivee'
+      },
+      'label_attr': {'class': 'form-label fs-5'}
+    }) }}
+    <span id=\"error-dateArrivee\" class=\"error-message text-danger fs-6\"></span>
   </div>
 </div>
 
 <div class=\"row mb-3\">
   <div class=\"col-md-12\">
-    {{ form_row(form.nombre_passagers, {'attr': {'class': 'form-control fs-4'}, 'label_attr': {'class': 'form-label fs-5'}}) }}
+    {{ form_row(form.nombre_passagers, {
+      'attr': {
+        'class': 'form-control fs-4',
+        'id': 'passengers'
+      },
+      'label_attr': {'class': 'form-label fs-5'}
+    }) }}
+    <span id=\"error-passengers\" class=\"error-message text-danger fs-6\"></span>
   </div>
 </div>
 
@@ -366,7 +421,7 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
   <!-- Description 1 -->
   <div class=\"row align-items-center my-5\">
     <div class=\"col-md-6 Descriptiontext\">
-      <p class=\"fs-4\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequatur beatae veniam? Illum quidem molestias est corporis, unde delectus amet! Vel cumque maxime alias vero cum. Veritatis, modi. Deleniti, eligendi?
+      <p class=\"fs-4\">Ecoride est une plateforme de covoiturage dédiée à la protection de notre planète. Nous encourageons des trajets partagés, réduisant ainsi l’empreinte carbone de chacun. Notre priorité est de privilégier les voitures électriques pour un transport plus propre et plus respectueux de l’environnement. Ensemble, contribuons à préserver la santé de la Terre tout en voyageant malin. Rejoignez Ecoride et faites le choix d’un avenir durable !
       </p>
     </div>
     <div class=\"col-md-6 Descriptionimage\">
@@ -379,7 +434,7 @@ class __TwigTemplate_800085d45569b31e309ea8afc336545d extends Template
       <img src=\"{{ asset('Image/Green2.jpg') }}\" alt=\"Car\" class=\"img-fluid rounded\" id=\"image2\">        
     </div>
     <div class=\"col-md-6 Descriptiontext\">
-      <p class=\"fs-4\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consequatur beatae veniam? Illum quidem molestias est corporis, unde delectus amet! Vel cumque maxime alias vero cum. Veritatis, modi. Deleniti, eligendi?
+      <p class=\"fs-4\">Pour cela, Ecoride met à votre disposition un réseau simple et efficace favorisant les déplacements en voitures électriques. Chaque trajet partagé permet de réduire les émissions polluantes et d’encourager une mobilité plus responsable. En choisissant Ecoride, vous devenez acteur du changement et participez à la construction d’un futur plus vert. Engageons-nous ensemble pour un monde où voyager rime avec respect de la nature.
       </p>
     </div>
   </div>
