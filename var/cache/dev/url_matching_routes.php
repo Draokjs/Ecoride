@@ -21,7 +21,7 @@ return [
         '/logout' => [[['_route' => 'logout', '_controller' => 'App\\Controller\\LoginController::logout'], null, null, null, false, false, null]],
         '/Espace' => [[['_route' => 'mon_espace', '_controller' => 'App\\Controller\\MonEspaceController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\RegisterController::register'], null, null, null, false, false, null]],
-        '/resultat' => [[['_route' => 'resultat', '_controller' => 'App\\Controller\\SearchController::search'], null, null, null, false, false, null]],
+        '/trip' => [[['_route' => 'resultat', '_controller' => 'App\\Controller\\SearchController::search'], null, null, null, false, false, null]],
         '/trip/autocomplete' => [[['_route' => 'trip_autocomplete', '_controller' => 'App\\Controller\\TripController::autocomplete'], null, null, null, false, false, null]],
         '/trip/resultat' => [[['_route' => 'trip_resultat', '_controller' => 'App\\Controller\\TripController::resultat'], null, null, null, false, false, null]],
     ],

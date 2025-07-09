@@ -3,6 +3,7 @@
 
 namespace App\Controller;
 
+use App\Repository\TripRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,26 +11,65 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SearchController extends AbstractController
 {
-    #[Route('/resultat', name: 'resultat')]
-    public function search(Request $request): Response
+    #[Route('/trip', name: 'resultat')]
+    public function search(Request $request, TripRepository $tripRepository): Response
     {
-        // Get the GET parameters from the request
-        $villeDepart = $request->query->get('Ville_depart');
-        $villeArrivee = $request->query->get('Ville_arrivee');
-        $dateDepart = $request->query->get('date_depart');
-        $dateArrivee = $request->query->get('date_arrivee');
-        $nombrePassagers = $request->query->get('nombre_passagers');
+        $villeDepart = $request->query->get('villeDepart');
+        $villeArrivee = $request->query->get('villeArrivee');
+        $dateDepart = $request->query->get('dateDepart');
+        $dateArrivee = $request->query->get('dateArrivee');
+        $nombrePassagers = $request->query->get('nombrePassagers');
 
-        // You can now use these variables to query your database or search logic
-        // For example, fetch matching rides using your repository
+        // Convert dates safely
+        try {
+            $dateDepartObj = $dateDepart ? new \DateTime($dateDepart) : null;
+            $dateArriveeObj = $dateArrivee ? new \DateTime($dateArrivee) : null;
+        } catch (\Exception $e) {
+            $dateDepartObj = null;
+            $dateArriveeObj = null;
+        }
 
-        // For now, just pass data to the template to debug
-        return $this->render('search/results.html.twig', [
+        $qb = $tripRepository->createQueryBuilder('t');
+
+        if ($villeDepart) {
+            $qb->andWhere('t.villeDepart = :villeDepart')
+               ->setParameter('villeDepart', $villeDepart);
+        }
+
+        if ($villeArrivee) {
+            $qb->andWhere('t.villeArrivee = :villeArrivee')
+               ->setParameter('villeArrivee', $villeArrivee);
+        }
+
+        if ($dateDepartObj) {
+            $qb->andWhere('t.dateDepart >= :dateDepart')
+               ->setParameter('dateDepart', $dateDepartObj);
+        }
+
+        if ($dateArriveeObj) {
+            $qb->andWhere('t.dateArrivee <= :dateArrivee')
+               ->setParameter('dateArrivee', $dateArriveeObj);
+        }
+
+        if ($nombrePassagers) {
+            $qb->andWhere('t.nombrePassagers >= :nombrePassagers')
+               ->setParameter('nombrePassagers', (int)$nombrePassagers);
+        }
+
+        // Debug dump: uncomment these lines to debug inputs and SQL query
+        dump([
             'villeDepart' => $villeDepart,
             'villeArrivee' => $villeArrivee,
-            'dateDepart' => $dateDepart,
-            'dateArrivee' => $dateArrivee,
+            'dateDepart' => $dateDepartObj,
+            'dateArrivee' => $dateArriveeObj,
             'nombrePassagers' => $nombrePassagers,
+        ]);
+        dump($qb->getQuery()->getSQL());
+
+        $trips = $qb->getQuery()->getResult();
+
+        return $this->render('trip/resultat.html.twig', [
+            'trips' => $trips,
         ]);
     }
 }

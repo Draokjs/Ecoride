@@ -24,7 +24,7 @@ return [
     'logout' => [[], ['_controller' => 'App\\Controller\\LoginController::logout'], [], [['text', '/logout']], [], [], []],
     'mon_espace' => [[], ['_controller' => 'App\\Controller\\MonEspaceController::index'], [], [['text', '/Espace']], [], [], []],
     'register' => [[], ['_controller' => 'App\\Controller\\RegisterController::register'], [], [['text', '/register']], [], [], []],
-    'resultat' => [[], ['_controller' => 'App\\Controller\\SearchController::search'], [], [['text', '/resultat']], [], [], []],
+    'resultat' => [[], ['_controller' => 'App\\Controller\\SearchController::search'], [], [['text', '/trip']], [], [], []],
     'trip_autocomplete' => [[], ['_controller' => 'App\\Controller\\TripController::autocomplete'], [], [['text', '/trip/autocomplete']], [], [], []],
     'trip_resultat' => [[], ['_controller' => 'App\\Controller\\TripController::resultat'], [], [['text', '/trip/resultat']], [], [], []],
     'App\Controller\ContactController::index' => [[], ['_controller' => 'App\\Controller\\ContactController::index'], [], [['text', '/contact']], [], [], []],
@@ -33,7 +33,7 @@ return [
     'App\Controller\LoginController::logout' => [[], ['_controller' => 'App\\Controller\\LoginController::logout'], [], [['text', '/logout']], [], [], []],
     'App\Controller\MonEspaceController::index' => [[], ['_controller' => 'App\\Controller\\MonEspaceController::index'], [], [['text', '/Espace']], [], [], []],
     'App\Controller\RegisterController::register' => [[], ['_controller' => 'App\\Controller\\RegisterController::register'], [], [['text', '/register']], [], [], []],
-    'App\Controller\SearchController::search' => [[], ['_controller' => 'App\\Controller\\SearchController::search'], [], [['text', '/resultat']], [], [], []],
+    'App\Controller\SearchController::search' => [[], ['_controller' => 'App\\Controller\\SearchController::search'], [], [['text', '/trip']], [], [], []],
     'App\Controller\TripController::autocomplete' => [[], ['_controller' => 'App\\Controller\\TripController::autocomplete'], [], [['text', '/trip/autocomplete']], [], [], []],
     'App\Controller\TripController::resultat' => [[], ['_controller' => 'App\\Controller\\TripController::resultat'], [], [['text', '/trip/resultat']], [], [], []],
 ];

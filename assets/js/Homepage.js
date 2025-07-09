@@ -1,16 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const departure = document.getElementById("villeDepart");
-  const arrival = document.getElementById("villeArrivee");
+  const departure = document.getElementById("search_ville_depart");
+  const arrival   = document.getElementById("search_ville_arrivee");
+  const arrowBtn  = document.getElementById("arrow");
+  const searchForm = document.getElementById("search");
 
-  // // Vérification basique pour éviter erreurs si les éléments sont absents
-  // if (!departure || !arrival) {
-  //   console.error("Les champs de ville sont introuvables !");
-  //   return;
-  // }
+  console.log('departure:', departure);
+  console.log('arrival:', arrival);
 
-  // === Arrow Inversion ===
-  const arrowBtn = document.getElementById("arrow");
-  if (arrowBtn) {
+  if (arrowBtn && departure && arrival) {
     arrowBtn.addEventListener("click", () => {
       const temp = departure.value;
       departure.value = arrival.value;
@@ -18,108 +15,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Affiche le message d’erreur dans un span correspondant
-  function showError(inputId, message) {
-    const errorSpan = document.getElementById(`error-${inputId}`);
-    if (errorSpan) {
-      errorSpan.textContent = message;
-    }
+  function showError(inputName, message) {
+    const errorSpan = document.getElementById(`error-${inputName}`);
+    if (errorSpan) errorSpan.textContent = message;
   }
 
-  // === Form Validation ===
   function validateForm() {
-    const minPassengers = 1;
-    const maxPassengers = 5;
+    const minP = 1, maxP = 5;
+    document.querySelectorAll(".error-message").forEach(s => s.textContent = "");
 
-    // Effacer les messages d’erreur précédents
-    document.querySelectorAll(".error-message").forEach(span => span.textContent = "");
+    const dateDep = document.getElementById("search_date_depart");
+    const dateArr = document.getElementById("search_date_arrivee");
+    const pass    = document.getElementById("search_nombre_passagers");
 
-    const dateDepartureInput = document.getElementById("dateDepart");
-    const dateArrivalInput = document.getElementById("dateArrivee");
-    const passengersInput = document.getElementById("passengers");
-
-    const dateDeparture = dateDepartureInput ? dateDepartureInput.value.trim() : "";
-    const dateArrival = dateArrivalInput ? dateArrivalInput.value.trim() : "";
-    const passengers = passengersInput ? parseInt(passengersInput.value, 10) : NaN;
+    const depVal = departure ? departure.value.trim() : "";
+    const arrVal = arrival   ? arrival.value.trim() : "";
+    const dDep   = dateDep && dateDep.value.trim();
+    const dArr   = dateArr && dateArr.value.trim();
+    const nb     = pass ? parseInt(pass.value, 10) : NaN;
 
     let valid = true;
 
-    if (!departure.value.trim()) {
-      showError("villeDepart", "Veuillez entrer une ville de départ.");
-      valid = false;
-    }
+    if (!depVal) { showError("search_ville_depart", "Entrez une ville de départ."); valid = false; }
+    if (!arrVal) { showError("search_ville_arrivee", "Entrez une ville d'arrivée."); valid = false; }
+    // ...continue your checks similarly...
 
-    if (!arrival.value.trim()) {
-      showError("villeArrivee", "Veuillez entrer une ville d'arrivée.");
-      valid = false;
-    }
-
-    if (!dateDeparture) {
-      showError("dateDepart", "Veuillez sélectionner une date de départ.");
-      valid = false;
-    }
-
-    if (!dateArrival) {
-      showError("dateArrivee", "Veuillez sélectionner une date d'arrivée.");
-      valid = false;
-    }
-
-    if (
-      departure.value.trim() &&
-      arrival.value.trim() &&
-      departure.value.trim() === arrival.value.trim()
-    ) {
-      showError("villeArrivee", "La ville de départ et d'arrivée ne peuvent pas être identiques.");
-      valid = false;
-    }
-
-    if (dateDeparture && dateArrival) {
-      const depDate = new Date(dateDeparture);
-      const arrDate = new Date(dateArrival);
-      if (depDate > arrDate) {
-        showError("dateDepart", "La date de départ ne peut pas être après la date d'arrivée.");
-        valid = false;
-      }
-    }
-
-    if (isNaN(passengers) || passengers < minPassengers || passengers > maxPassengers) {
-      showError("passengers", `Le nombre de passagers doit être entre ${minPassengers} et ${maxPassengers}.`);
-      valid = false;
-    }
-
-    if (
-      !departure.value.trim() ||
-      !arrival.value.trim() ||
-      !dateDeparture ||
-      !dateArrival ||
-      isNaN(passengers)
-    ) {
-      valid = false;
-    }
-
-    if (!valid) return false;
-
-    // Sauvegarde dans localStorage
-    localStorage.setItem("search", JSON.stringify({
-      dateDeparture,
-      dateArrival,
-      departure: departure.value.trim(),
-      arrival: arrival.value.trim(),
-      numberOfPassengers: passengers
-    }));
-
-    return true;
+    return valid;
   }
 
-  // Gestion soumission formulaire
-  const searchForm = document.getElementById("search");
   if (searchForm) {
-    searchForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      if (validateForm()) {
-        searchForm.reset();
-        window.open("Resultat.html", "_top");
-      }
+    searchForm.addEventListener("submit", event => {
+      if (!validateForm()) event.preventDefault();
     });
   }
 });
