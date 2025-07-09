@@ -46,18 +46,13 @@
   width: 100%;
   max-width: 400px;
   background-color: var(--bs-main-color);
-  height: 50vh;
+  height: fit-content;
   margin-top: 5vh;
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Image description  */
-#Descriptionimage img {
-  width: 80%;
-  height: auto;
-}
-
 #image1 {
   height: 41vh;
   margin-left: 15vw;
