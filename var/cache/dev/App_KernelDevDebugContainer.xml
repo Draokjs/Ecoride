@@ -432,6 +432,12 @@
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
+    <service id="App\Form\LoginType" class="App\Form\LoginType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
+    <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
     <service id="App\Form\SearchType" class="App\Form\SearchType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
@@ -474,7 +480,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.d3oJV07"/>
+      <argument type="service" id=".service_locator.K7PZQ.L"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1445,6 +1451,8 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\LoginType</argument>
+        <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\SearchType</argument>
         <argument>App\Form\TripType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -3544,7 +3552,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.d3oJV07"/>
+      <argument type="service" id=".service_locator.K7PZQ.L"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -4136,7 +4144,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.oGE43R6"/>
+      <argument type="service" id=".service_locator.7PW.T8P"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4234,6 +4242,8 @@
       <argument type="service" id="form.server_params"/>
       <argument>%form.type_extension.csrf.field_attr%</argument>
       <argument type="collection">
+        <argument key="App\Form\LoginType">submit</argument>
+        <argument key="App\Form\RegistrationFormType">submit</argument>
         <argument key="App\Form\SearchType">submit</argument>
         <argument key="App\Form\TripType">submit</argument>
       </argument>
@@ -7694,6 +7704,10 @@
     <service id=".abstract.instanceof.App\Entity\Trip" class="App\Entity\Trip" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\User.0.App\Entity\User" class="App\Entity\User" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LoginType" class="App\Form\LoginType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\LoginType" class="App\Form\LoginType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SearchType" class="App\Form\SearchType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\SearchType" class="App\Form\SearchType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TripType" class="App\Form\TripType" autowire="true" abstract="true"/>
@@ -8232,17 +8246,18 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QLiKoNQ" method="withContext"/>
     </service>
-    <service id=".service_locator.3QECKYg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.YxhG_3W" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="passwordHasher" type="service_closure" id="security.user_password_hasher"/>
       </argument>
     </service>
-    <service id=".service_locator.3QECKYg.App\Controller\LoginController::login()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.YxhG_3W.App\Controller\LoginController::login()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\LoginController::login()"/>
       <argument>App\Controller\LoginController::login()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.3QECKYg" method="withContext"/>
+      <factory service=".service_locator.YxhG_3W" method="withContext"/>
     </service>
     <service id=".service_locator.5SuUxla" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -8281,7 +8296,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QLiKoNQ" method="withContext"/>
     </service>
-    <service id=".service_locator.d3oJV07" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.K7PZQ.L" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -8289,7 +8304,7 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.QLiKoNQ.App\Controller\HomeController::index()"/>
-        <argument key="App\Controller\LoginController::login" type="service_closure" id=".service_locator.3QECKYg.App\Controller\LoginController::login()"/>
+        <argument key="App\Controller\LoginController::login" type="service_closure" id=".service_locator.YxhG_3W.App\Controller\LoginController::login()"/>
         <argument key="App\Controller\RegisterController::register" type="service_closure" id=".service_locator.5SuUxla.App\Controller\RegisterController::register()"/>
         <argument key="App\Controller\SearchController::search" type="service_closure" id=".service_locator.rgB06UG.App\Controller\SearchController::search()"/>
         <argument key="App\Controller\TripController::autocomplete" type="service_closure" id=".service_locator.QLiKoNQ.App\Controller\TripController::autocomplete()"/>
@@ -8297,7 +8312,7 @@
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.zHyJIs5.kernel::loadRoutes()"/>
         <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.QLiKoNQ.App\Controller\HomeController::index()"/>
-        <argument key="App\Controller\LoginController:login" type="service_closure" id=".service_locator.3QECKYg.App\Controller\LoginController::login()"/>
+        <argument key="App\Controller\LoginController:login" type="service_closure" id=".service_locator.YxhG_3W.App\Controller\LoginController::login()"/>
         <argument key="App\Controller\RegisterController:register" type="service_closure" id=".service_locator.5SuUxla.App\Controller\RegisterController::register()"/>
         <argument key="App\Controller\SearchController:search" type="service_closure" id=".service_locator.rgB06UG.App\Controller\SearchController::search()"/>
         <argument key="App\Controller\TripController:autocomplete" type="service_closure" id=".service_locator.QLiKoNQ.App\Controller\TripController::autocomplete()"/>
@@ -8487,9 +8502,11 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.oGE43R6" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.7PW.T8P" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\LoginType" type="service_closure" id="App\Form\LoginType"/>
+        <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\SearchType" type="service_closure" id="App\Form\SearchType"/>
         <argument key="App\Form\TripType" type="service_closure" id="App\Form\TripType"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service_closure" id="form.type.form"/>
@@ -10573,7 +10590,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.d3oJV07"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.K7PZQ.L"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10619,7 +10636,7 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.n_ENPtW" alias=".service_locator.zHyJIs5"/>
     <service id=".service_locator.LanGXNl" alias=".service_locator.QLiKoNQ"/>
-    <service id=".service_locator.Nrz07Zz" alias=".service_locator.3QECKYg"/>
+    <service id=".service_locator.5sIukdH" alias=".service_locator.YxhG_3W"/>
     <service id=".service_locator.xpyIvFE" alias=".service_locator.5SuUxla"/>
     <service id=".service_locator.yTnOfja" alias=".service_locator.rgB06UG"/>
     <service id=".service_locator.9nvaCmp" alias=".service_locator.ZyP9f7K"/>

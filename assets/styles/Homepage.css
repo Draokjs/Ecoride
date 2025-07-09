@@ -13,11 +13,11 @@
   }
 
 /* Background */
-#homepage-main {
+/* #homepage-main {
   background-image: url("../images/green-nature-road-high-quality-desktop-gb0j67jya0bilxuq.jpg");
   background-repeat: repeat-x;
   background-size: 31% 31%;
-}
+} */
 
 /* Arrow rotation */
   #arrow {
@@ -46,8 +46,10 @@
   width: 100%;
   max-width: 400px;
   background-color: var(--bs-main-color);
-  margin: auto;
-  height: 55vh;
+  height: 50vh;
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Image description  */

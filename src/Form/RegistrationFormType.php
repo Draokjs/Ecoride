@@ -10,7 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class RegistrationType extends AbstractType
+class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -19,7 +19,11 @@ class RegistrationType extends AbstractType
             ->add('nom', TextType::class)
             ->add('prenom', TextType::class)
             ->add('pseudo', TextType::class)
-            ->add('password', PasswordType::class)
+            ->add('plainPassword', PasswordType::class, [
+            'mapped' => false,
+            'label' => 'Mot de passe',
+            ])
+
             // tu peux ajouter d'autres champs si besoin
         ;
     }

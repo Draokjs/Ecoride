@@ -2,32 +2,42 @@
 
 namespace App\Controller;
 
+use App\Form\LoginType;
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class LoginController extends AbstractController
 {
-    #[Route('/login', name: 'login')]
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    #[Route('/login', name: 'app_login', methods: ['GET', 'POST'])]
+    public function login(Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $passwordHasher): Response
     {
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
+        $form = $this->createForm(LoginType::class);
+        $form->handleRequest($request);
 
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $email = $data['email'];
+            $password = $data['password'];
 
-        return $this->render('security/login.html.twig', [
-            'last_username' => $lastUsername,
-            'error' => $error,
+            $user = $em->getRepository(User::class)->findOneBy(['email' => $email]);
+
+            if (!$user) {
+                $this->addFlash('error', 'Utilisateur non trouvé');
+            } elseif ($passwordHasher->isPasswordValid($user, $password)) {
+                // TODO: Handle login success (session, redirect, etc)
+                return new Response("Connexion réussie ! Bienvenue " . htmlspecialchars($user->getPseudo()));
+            } else {
+                $this->addFlash('error', 'Mot de passe incorrect');
+            }
+        }
+
+        return $this->render('login/login.html.twig', [
+            'loginForm' => $form->createView(),
         ]);
-    }
-
-    #[Route('/logout', name: 'logout')]
-    public function logout(): void
-    {
-        // This code is never executed.
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 }
