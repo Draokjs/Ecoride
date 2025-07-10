@@ -4,9 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const arrowBtn  = document.getElementById("arrow");
   const searchForm = document.getElementById("search");
 
-  console.log('departure:', departure);
-  console.log('arrival:', arrival);
-
   if (arrowBtn && departure && arrival) {
     arrowBtn.addEventListener("click", () => {
       const temp = departure.value;
