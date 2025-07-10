@@ -13,11 +13,11 @@ class LoginType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'Adresse e-mail',
+                'label' => 'Adresse e-mail :',
                 'attr' => ['id' => 'email'],
             ])
             ->add('password', PasswordType::class, [
-                'label' => 'Mot de passe',
+                'label' => 'Mot de passe :',
                 'attr' => ['id' => 'password'],
             ]);
     }

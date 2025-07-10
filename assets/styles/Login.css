@@ -2,10 +2,10 @@
   display: flex;
   background-color: var(--bs-main-color);
   width: fit-content;
-  height: 26vh;
   border-radius: 5%;
-  margin: auto;
-  margin-top: 20vh;
-  height: 32vh;
-  margin-bottom: -50VH;
+  margin-left: auto;
+  margin-right: auto;
+  height: fit-content;
+  margin-top: 5vh;
+  font-size: larger;
 }
