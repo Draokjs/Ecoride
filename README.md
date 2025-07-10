@@ -10,7 +10,6 @@ Front end:
 - Github desktop ( managing branches and pull request )
 - Package manager Node.js ( npm )
 - CSS Framework ( boostrap installed with npm )
-- Live Sass Compiler (Compiling sass)
 
 Backend : 
 - Framework Symfony
