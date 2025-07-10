@@ -1,6 +1,3 @@
-import './js/Homepage.js';
-import './js/Resultat.js';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './styles/Homepage.css';
