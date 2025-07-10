@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-<div class="container mt-5">
+<div class="container mt-5 bg-main-color rounded" id= "Registerform">
     <h1 class="mb-4 text-center">Inscription</h1>
 
     {{ form_start(registrationForm) }}
@@ -42,7 +42,9 @@
         {{ form_errors(registrationForm.plainPassword) }}
     </div>
 
-    <button type="submit" class="btn btn-complementary-color w-100 fs-5">S'inscrire</button>
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-complementary-color w-50 fs-5">S'inscrire</button>
+    </div>
 
     {{ form_end(registrationForm) }}
 </div>
