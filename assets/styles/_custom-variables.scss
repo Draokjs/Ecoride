@@ -1,9 +1,11 @@
 // _custom-variables.scss
 
+
 $custom-colors: (
   "main-color": #19aea3,
   "complementary-color": #4E1179,
   "third-color": #2c19ae,
+  "dropdown-bg": #19aea3,
 );
 
 $theme-colors: map-merge(
@@ -19,3 +21,5 @@ $theme-colors: map-merge(
   ),
   $custom-colors
 );
+
+

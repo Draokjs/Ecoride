@@ -34,11 +34,11 @@
     background-color: var(--bs-complementary-color);
     font-size: 1.5rem;
   }
-
-  /* Dropdown item */
+/* 
+  Dropdown item */
 .dropdown-item:hover,
 .dropdown-item:focus {
-  background-color: var(--bs-main-color);
+  background-color: var(--bs-main-color) !important;
 }
 
 /* Search */
