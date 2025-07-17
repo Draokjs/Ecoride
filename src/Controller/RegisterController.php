@@ -13,6 +13,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormErrorIterator;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 
 class RegisterController extends AbstractController
 {
@@ -21,7 +22,8 @@ class RegisterController extends AbstractController
         Request $request,
         SessionInterface $session,
         UserPasswordHasherInterface $passwordHasher,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        CsrfTokenManagerInterface $csrfTokenManager
     ): Response {
         $session->start();
 
@@ -33,6 +35,8 @@ class RegisterController extends AbstractController
 
         $errors = [];
         if ($form->isSubmitted()) {
+            $expectedToken = $csrfTokenManager->getToken('registration_form');
+            dump('EXPECTED TOKEN:', $expectedToken->getValue());
             if ($form->isValid()) {
                 $hashedPassword = $passwordHasher->hashPassword($user, $user->getPlainPassword());
                 $user->setPassword($hashedPassword);
