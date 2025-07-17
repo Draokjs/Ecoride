@@ -12,15 +12,19 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormErrorIterator;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class RegisterController extends AbstractController
 {
     #[Route('/register', name: 'register', methods: ['GET', 'POST'])]
     public function register(
         Request $request,
+        SessionInterface $session,
         UserPasswordHasherInterface $passwordHasher,
         EntityManagerInterface $entityManager
     ): Response {
+        $session->start();
+
         $user = new User();
 
         $form = $this->createForm(RegistrationFormType::class, $user);
