@@ -2,13 +2,17 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\UserRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+// src/Entity/User.php
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
-class User
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -36,11 +40,16 @@ class User
     #[ORM\Column(length: 50)]
     private ?string $adresse = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $date_naissance = null;
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $date_naissance = null;
 
-    #[ORM\Column(type: Types::BLOB)]
+    #[ORM\Column(type: Types::BLOB, nullable: true)]
     private $photo = null;
+
+
+    #[Assert\NotBlank(groups: ['registration'])]
+    #[Assert\Length(min: 6, groups: ['registration'])]
+    private ?string $plainPassword = null;
 
     public function getId(): ?int
     {
@@ -55,7 +64,6 @@ class User
     public function setEmail(string $email): static
     {
         $this->email = $email;
-
         return $this;
     }
 
@@ -67,7 +75,6 @@ class User
     public function setNom(string $nom): static
     {
         $this->nom = $nom;
-
         return $this;
     }
 
@@ -79,7 +86,6 @@ class User
     public function setPrenom(string $prenom): static
     {
         $this->prenom = $prenom;
-
         return $this;
     }
 
@@ -91,7 +97,19 @@ class User
     public function setPassword(string $password): static
     {
         $this->password = $password;
+        return $this;
+    }
 
+    public function getPlainPassword(): ?string
+    {
+         return $this->plainPassword;
+    }
+
+
+   
+    public function setPlainPassword(?string $plainPassword): self
+    {
+        $this->plainPassword = $plainPassword;
         return $this;
     }
 
@@ -103,7 +121,6 @@ class User
     public function setPseudo(string $pseudo): static
     {
         $this->pseudo = $pseudo;
-
         return $this;
     }
 
@@ -115,7 +132,6 @@ class User
     public function setTelephone(string $telephone): static
     {
         $this->telephone = $telephone;
-
         return $this;
     }
 
@@ -127,19 +143,17 @@ class User
     public function setAdresse(string $adresse): static
     {
         $this->adresse = $adresse;
-
         return $this;
     }
 
-    public function getDateNaissance(): ?string
+    public function getDateNaissance(): ?\DateTimeInterface
     {
         return $this->date_naissance;
     }
 
-    public function setDateNaissance(string $date_naissance): static
+    public function setDateNaissance(?\DateTimeInterface $date_naissance): self
     {
         $this->date_naissance = $date_naissance;
-
         return $this;
     }
 
@@ -151,7 +165,23 @@ class User
     public function setPhoto($photo): static
     {
         $this->photo = $photo;
-
         return $this;
     }
+
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    public function getRoles(): array
+    {
+        return ['ROLE_USER'];
+    }
+
+    public function eraseCredentials(): void
+    {
+        $this->plainPassword = null;
+    }
 }
+
+

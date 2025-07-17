@@ -1,27 +1,25 @@
 const Encore = require('@symfony/webpack-encore');
 
 Encore
-    .setOutputPath('public/build/')
-    .setPublicPath('/build')
+    // ... other configurations ...
     .addEntry('app', './assets/app.js')
     .addEntry('Homepage', './assets/js/Homepage.js')
+    .addEntry('csrf_protection_controller', './assets/controllers/csrf_protection_controller.js')
+    .setOutputPath('public/build/')
+    .setPublicPath('/build')
     .enablePostCssLoader()
-    .enableSourceMaps(!Encore.isProduction())
-    .cleanupOutputBeforeBuild()
-    .enableVersioning(Encore.isProduction())
-    .enableSingleRuntimeChunk()
-    .configureLoaderRule('css', loaderRule => {
-        loaderRule.test = /\.css$/i;
-        loaderRule.use = ['style-loader', 'css-loader'];
-    })
-    .enableSassLoader(options => {
+    .enableSassLoader((options) => {
         options.sassOptions = {
             // Show deprecation warnings from dependencies
             quietDeps: false,
             // Enable source maps for easier debugging
             sourceMap: true,
         };
-    });
+    })
+    .enableSourceMaps(!Encore.isProduction())
+    .cleanupOutputBeforeBuild()
+    .enableVersioning(Encore.isProduction())
+    .enableSingleRuntimeChunk();
 
 module.exports = Encore.getWebpackConfig();
 
