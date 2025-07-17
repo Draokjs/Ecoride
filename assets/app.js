@@ -1,3 +1,5 @@
+import { startStimulusApp } from '@symfony/stimulus-bridge';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './styles/Homepage.css';
@@ -7,4 +9,8 @@ import './styles/Style.scss';
 import './styles/app.css';
 import '@popperjs/core';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+const app = startStimulusApp(require.context('./controllers', true, /\.js$/));
+export default app;
+
 

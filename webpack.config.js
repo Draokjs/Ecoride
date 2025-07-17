@@ -1,4 +1,5 @@
 const Encore = require('@symfony/webpack-encore');
+const path = require('path');
 
 Encore
     // ... other configurations ...
@@ -19,7 +20,11 @@ Encore
     .enableSourceMaps(!Encore.isProduction())
     .cleanupOutputBeforeBuild()
     .enableVersioning(Encore.isProduction())
-    .enableSingleRuntimeChunk();
+    .enableSingleRuntimeChunk()
+    .addAliases({
+    '@symfony/stimulus-bridge/controllers.json': path.resolve(__dirname, 'assets/controllers.json'),
+    })
 
 module.exports = Encore.getWebpackConfig();
+
 

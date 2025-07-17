@@ -1,0 +1,8 @@
+{
+  "controllers": {
+    "csrf-protection": {
+      "enabled": true,
+      "fetch": "eager"
+    }
+  }
+}

@@ -25,6 +25,12 @@ return [[
                 '/build/Homepage.js',
             ],
         ],
+        'csrf_protection_controller' => [
+            'js' => [
+                '/build/runtime.js',
+                '/build/csrf_protection_controller.js',
+            ],
+        ],
     ],
 ],
 

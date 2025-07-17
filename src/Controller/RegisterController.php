@@ -59,6 +59,8 @@ class RegisterController extends AbstractController
             }
         }
 
+        $request->getSession()->start();
+        
         return $this->render('security/register.html.twig', [
             'registrationForm' => $form->createView(),
             'errors' => $errors,

@@ -69,7 +69,13 @@
         {{ form_errors(registrationForm.photo) }}
     </div>
 
-    {{ form_widget(registrationForm._token) }}
+   {{ form_row(registrationForm._token, {
+    attr: {
+        'data-controller': 'csrf-protection',
+        'data-csrf-protection-cookie-value': csrf_token('registration_form')|slice(0, 22)
+    }
+    }) }}
+
 
     {% if errors %}
         <ul>
