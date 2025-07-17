@@ -7,9 +7,14 @@
 {% endblock %}
 
 {% block body %}
-<div class="container-sm mt-5 bg-main-color rounded" id= "Registerform">
+<div class="mt-5 bg-main-color rounded" id= "Registerform">
     <h1 class="mb-4 text-center">Inscription</h1>
-    {{ form_start(registrationForm) }}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">{{ message }}</div>
+        {% endfor %}
+    {% endfor %}
+    {{ form_start(registrationForm, {'method': 'POST', 'attr': {'enctype': 'multipart/form-data'}}) }}
     <div class="mb-3">
         {{ form_label(registrationForm.nom) }}
         {{ form_widget(registrationForm.nom, { attr: { class: 'form-control' } }) }}
@@ -17,7 +22,7 @@
     </div>
 
     <div class="mb-3">
-        {{ form_label(registrationForm.prenom) }}g
+        {{ form_label(registrationForm.prenom) }}
         {{ form_widget(registrationForm.prenom, { attr: { class: 'form-control' } }) }}
         {{ form_errors(registrationForm.prenom) }}
     </div>
@@ -40,14 +45,49 @@
         {{ form_errors(registrationForm.plainPassword) }}
     </div>
 
+    <div class="mb-3">
+        {{ form_label(registrationForm.telephone) }}
+        {{ form_widget(registrationForm.telephone, { attr: { class: 'form-control' } }) }}
+        {{ form_errors(registrationForm.telephone) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(registrationForm.adresse) }}
+        {{ form_widget(registrationForm.adresse, { attr: { class: 'form-control', rows: '3' } }) }}
+        {{ form_errors(registrationForm.adresse) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(registrationForm.date_naissance) }}
+        {{ form_widget(registrationForm.date_naissance, { attr: { class: 'form-control' } }) }}
+        {{ form_errors(registrationForm.date_naissance) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(registrationForm.photo) }}
+        {{ form_widget(registrationForm.photo, { attr: { class: 'form-control' } }) }}
+        {{ form_errors(registrationForm.photo) }}
+    </div>
+
+    {{ form_widget(registrationForm._token) }}
+
+    {% if errors %}
+        <ul>
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
     <div class="d-flex justify-content-center">
         <button type="submit" class="btn btn-complementary-color w-50 fs-5">S'inscrire</button>
     </div>
 
-    {{ form_end(registrationForm) }}
+    {{ form_end(registrationForm, {'render_rest': false}) }}
 </div>
 {% endblock %}
-
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('csrf_protection_controller') }}
 {% endblock %}
+

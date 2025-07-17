@@ -10,35 +10,66 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Form\FormError;
+use Symfony\Component\Form\FormErrorIterator;
 
 class RegisterController extends AbstractController
 {
-    #[Route('/register', name: 'register')]
+    #[Route('/register', name: 'register', methods: ['GET', 'POST'])]
     public function register(
         Request $request,
         UserPasswordHasherInterface $passwordHasher,
         EntityManagerInterface $entityManager
     ): Response {
         $user = new User();
+
         $form = $this->createForm(RegistrationFormType::class, $user);
+
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
-            $hashedPassword = $passwordHasher->hashPassword(
-                $user,
-                $form->get('plainPassword')->getData()
-            );
-            $user->setPassword($hashedPassword);
+        $errors = [];
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $hashedPassword = $passwordHasher->hashPassword($user, $user->getPlainPassword());
+                $user->setPassword($hashedPassword);
 
-            $entityManager->persist($user);
-            $entityManager->flush();
+                $photoFile = $form->get('photo')->getData();
+                if ($photoFile) {
+                    $photoData = file_get_contents($photoFile->getPathname());
+                    $user->setPhoto($photoData);
+                }
 
-            return $this->redirectToRoute('login');
+                $entityManager->persist($user);
+                $entityManager->flush();
+
+                $user->eraseCredentials();
+
+                return $this->redirectToRoute('login');
+            } else {
+                $errors = $this->getFormErrors($form->getErrors(true, false));
+                dump($errors);
+            }
         }
 
         return $this->render('security/register.html.twig', [
             'registrationForm' => $form->createView(),
+            'errors' => $errors,
         ]);
     }
+
+    private function getFormErrors(FormErrorIterator $errors): array
+    {
+        $result = [];
+        foreach ($errors as $error) {
+            if ($error instanceof FormError) {
+                $origin = $error->getOrigin();
+                $fieldName = $origin ? $origin->getName() : 'form';
+                $result[] = $fieldName . ': ' . $error->getMessage();
+            } elseif ($error instanceof FormErrorIterator) {
+                $result = array_merge($result, $this->getFormErrors($error));
+            }
+        }
+        return $result;
+    }
 }
+

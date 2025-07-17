@@ -19,6 +19,12 @@ return [[
                 '/build/app.css',
             ],
         ],
+        'Homepage' => [
+            'js' => [
+                '/build/runtime.js',
+                '/build/Homepage.js',
+            ],
+        ],
     ],
 ],
 
