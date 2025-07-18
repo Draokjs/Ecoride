@@ -27,28 +27,4 @@ class LoginController extends AbstractController
         ]);
     }
     
-    #[Route('/login-check', name: 'app_login_check')]
-    public function loginCheck(Request $request, AuthenticationUtils $authenticationUtils, UserPasswordEncoderInterface $passwordEncoder): Response
-    {
-        $username = $request->request->get('email');
-        $password = $request->request->get('password');
-
-        $user = $this->getDoctrine()->getRepository(User::class)->findOneBy(['email' => $username]);
-
-        if (!$user) {
-            $this->addFlash('error', 'Invalid username or password');
-            return $this->redirectToRoute('app_login');
-        }
-
-        $isValid = $passwordEncoder->isPasswordValid($user, $password);
-
-        if (!$isValid) {
-            $this->addFlash('error', 'Invalid username or password');
-            return $this->redirectToRoute('app_login');
-        }
-
-        $this->addFlash('success', 'Bienvenue ' . $user->getUsername() . ' sur Ecoride');
-
-        return $this->redirectToRoute('resultat');
-    }
 }
