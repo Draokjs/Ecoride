@@ -11,7 +11,7 @@ use App\Repository\TripRepository;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'home')]
+        #[Route('/', name: 'home')]
     public function home(Request $request, TripRepository $tripRepo): Response
     {
         // Create the search form
@@ -34,10 +34,13 @@ class HomeController extends AbstractController
             ->getQuery()
             ->getSingleColumnResult();
 
+        $cities = array_merge($departureCities, $arrivalCities);
+
         return $this->render('home/homepage.html.twig', [
             'form' => $form->createView(),
             'departureCities' => $departureCities,
             'arrivalCities' => $arrivalCities,
+            'cities' => $cities,
         ]);
     }
 
@@ -100,3 +103,4 @@ class HomeController extends AbstractController
         ]);
     }
 }
+

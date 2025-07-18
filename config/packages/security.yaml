@@ -6,7 +6,7 @@ security:
         app_user_provider:
             entity:
                 class: App\Entity\User
-                property: email
+                property: pseudo
 
     firewalls:
         dev:
@@ -15,12 +15,13 @@ security:
 
         main:
             lazy: true
-            provider: app_user_provider  # ✅ use DB-based users
+            provider: app_user_provider
 
             form_login:
                 login_path: app_login
                 check_path: app_login
                 default_target_path: app_homepage
+                username_parameter: pseudo
             logout:
                 path: logout
                 target: app_login
@@ -28,12 +29,3 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
-
-when@test:
-    security:
-        password_hashers:
-            Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
-                algorithm: auto
-                cost: 4
-                time_cost: 3
-                memory_cost: 10
