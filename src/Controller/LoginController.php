@@ -26,7 +26,7 @@ class LoginController extends AbstractController
             'error' => $error,
         ]);
     }
-
+    
     #[Route('/login-check', name: 'app_login_check')]
     public function loginCheck(Request $request, AuthenticationUtils $authenticationUtils, UserPasswordEncoderInterface $passwordEncoder): Response
     {
@@ -47,11 +47,8 @@ class LoginController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
-        $token = new TokenInterface();
-        $token->setUser($user);
+        $this->addFlash('success', 'Bienvenue ' . $user->getUsername() . ' sur Ecoride');
 
-        $this->container->get('security.token_storage')->setToken($token);
-
-        return $this->redirectToRoute('dashboard');
+        return $this->redirectToRoute('resultat');
     }
 }
