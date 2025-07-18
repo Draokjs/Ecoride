@@ -25,7 +25,6 @@ return [
             [['_route' => 'app_login', '_controller' => 'App\\Controller\\LoginController::login'], null, null, null, false, false, null],
             [['_route' => 'login', '_controller' => 'App\\Controller\\LoginController::login'], null, null, null, false, false, null],
         ],
-        '/login-check' => [[['_route' => 'app_login_check', '_controller' => 'App\\Controller\\LoginController::loginCheck'], null, null, null, false, false, null]],
         '/Espace' => [[['_route' => 'mon_espace', '_controller' => 'App\\Controller\\MonEspaceController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\RegisterController::register'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/trip' => [[['_route' => 'resultat', '_controller' => 'App\\Controller\\SearchController::search'], null, null, null, false, false, null]],
