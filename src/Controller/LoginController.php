@@ -7,9 +7,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Core\Security;
 
 class LoginController extends AbstractController
 {
@@ -18,13 +15,12 @@ class LoginController extends AbstractController
     {
         // Get login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
-        // Last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
+        // Last email entered by the user
+        $lastEmail = $authenticationUtils->getLastUsername();
 
         return $this->render('security/login.html.twig', [
-            'last_username' => $lastUsername,
+            'last_email' => $lastEmail,
             'error' => $error,
         ]);
     }
-    
 }

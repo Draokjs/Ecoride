@@ -4,5 +4,29 @@
 
 {% block body %}
 <h1>Bienvenue dans Mon Espace</h1>
-<img src="{{ asset('./images/Logo.png') }}" alt="Logo de Ecoride" width="200">
+
+{% if user %}
+    <p><strong>Email :</strong> {{ user.email }}</p>
+    <p><strong>Nom :</strong> {{ user.nom }}</p>
+    <p><strong>Prénom :</strong> {{ user.prenom }}</p>
+    <p><strong>Username :</strong> {{ user.username }}</p>
+    <p><strong>Téléphone :</strong> {{ user.telephone ?? 'Non renseigné' }}</p>
+    <p><strong>Adresse :</strong> {{ user.adresse ?? 'Non renseignée' }}</p>
+    <p><strong>Date de naissance :</strong> 
+        {% if user.dateNaissance %}
+            {{ user.dateNaissance|date('d/m/Y') }}
+        {% else %}
+            Non renseignée
+        {% endif %}
+    </p>
+
+    {% if photoBase64 %}
+        <p><strong>Photo de profil :</strong></p>
+        <img src="data:image/jpeg;base64,{{ photoBase64 }}" alt="Photo de profil" width="150">
+    {% endif %}
+    
+{% else %}
+    <p>Vous n'êtes pas connecté. <a href="{{ path('app_login') }}">Connectez-vous ici</a>.</p>
+{% endif %}
 {% endblock %}
+

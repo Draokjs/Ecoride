@@ -53,7 +53,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('photo', FileType::class, [
                 'label' => 'Profile photo (JPG or PNG file)',
-                'mapped' => false, // Not mapped to entity, handle manually in controller
+                'mapped' => false,
                 'required' => false,
                 'constraints' => [
                     new File([
@@ -68,7 +68,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('plainPassword', PasswordType::class, [
                 'label' => 'Mot de passe',
-                'mapped' => true, 
+                'mapped' => true,
                 'required' => true,
                 'constraints' => [
                     new NotBlank([
