@@ -24,18 +24,12 @@
                     </div>
                 {% endif %}
 
-                {% if error %}
-                    <div class="alert alert-danger">
-                        {{ error.messageKey|trans(error.messageData, 'security') }}
-                    </div>
-                {% endif %}
-
                 <div class="col mt-3">
                     <form method="post" action="{{ path('app_login') }}">
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                         <div class="mb-3">
-                            <label for="username" class="form-label">Nom d'utilisateur</label>
-                            <input type="text" name="username" id="username" value="{{ last_username }}" class="form-control" required autofocus>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="email" id="email" value="{{ last_username }}" class="form-control" required autofocus>
                         </div>
 
                         <div class="mb-3">

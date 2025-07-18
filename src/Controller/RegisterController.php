@@ -30,13 +30,13 @@ class RegisterController extends AbstractController
         $user = new User();
 
         $form = $this->createForm(RegistrationFormType::class, $user);
-
         $form->handleRequest($request);
 
         $errors = [];
         if ($form->isSubmitted()) {
             $expectedToken = $csrfTokenManager->getToken('registration_form');
             dump('EXPECTED TOKEN:', $expectedToken->getValue());
+
             if ($form->isValid()) {
                 $hashedPassword = $passwordHasher->hashPassword($user, $user->getPlainPassword());
                 $user->setPassword($hashedPassword);
@@ -52,15 +52,13 @@ class RegisterController extends AbstractController
 
                 $user->eraseCredentials();
 
-                return $this->redirectToRoute('login');
+                return $this->redirectToRoute('app_login');
             } else {
                 $errors = $this->getFormErrors($form->getErrors(true, false));
                 dump($errors);
             }
         }
 
-        $request->getSession()->start();
-        
         return $this->render('security/register.html.twig', [
             'registrationForm' => $form->createView(),
             'errors' => $errors,
@@ -82,4 +80,3 @@ class RegisterController extends AbstractController
         return $result;
     }
 }
-
