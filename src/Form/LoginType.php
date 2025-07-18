@@ -21,4 +21,9 @@ class LoginType extends AbstractType
                 'attr' => ['id' => 'password'],
             ]);
     }
+
+    public function getName()
+    {
+        return 'login';
+    }
 }
