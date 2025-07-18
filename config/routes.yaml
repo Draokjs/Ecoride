@@ -4,10 +4,6 @@ controllers:
         namespace: App\Controller
     type: attribute
 
-login:
-    path: /login
-    controller: App\Controller\LoginController::login
-
 app_homepage:
     path: /
     controller: App\Controller\HomeController::Index
