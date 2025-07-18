@@ -10,5 +10,5 @@ login:
 
 app_homepage:
     path: /
-    controller: App\Controller\SomeController::index
+    controller: App\Controller\HomeController::index
 
