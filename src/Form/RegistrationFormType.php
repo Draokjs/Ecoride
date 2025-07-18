@@ -39,7 +39,7 @@ class RegistrationFormType extends AbstractType
                     new Length(['min' => 2, 'max' => 50]),
                 ],
             ])
-            ->add('pseudo', TextType::class, [
+            ->add('username', TextType::class, [
                 'constraints' => [
                     new NotBlank(),
                     new Length(['min' => 2, 'max' => 50]),

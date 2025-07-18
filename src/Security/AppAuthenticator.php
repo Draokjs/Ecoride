@@ -25,14 +25,14 @@ class AppAuthenticator extends AbstractAuthenticator
 
     public function authenticate(TokenInterface $token, UserProviderInterface $userProvider)
     {
-        $pseudo = $token->getCredentials();
-        $user = $this->loadUserByUsername($pseudo);
+        $username = $token->getCredentials();
+        $user = $this->loadUserByUsername($username);
 
         if (!$user) {
-            throw new CustomUserMessageAuthenticationException('Invalid pseudo');
+            throw new CustomUserMessageAuthenticationException('Invalid username');
         }
 
-        return new UsernamePasswordToken($user, $pseudo, $user->getRoles());
+        return new UsernamePasswordToken($user, $username, $user->getRoles());
     }
 
     public function loadUserByUsername($username)
