@@ -1,23 +1,6 @@
-security:
-    enable_authenticator_manager: true
-    password_hashers:
-        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+app_login:
+    path: /login
+    controller: App\Controller\LoginController::login
 
-    providers:
-        app_user_provider:
-            entity:
-                class: App\Entity\User
-                property: email
-
-    firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-
-        main:
-            lazy: true
-            provider: app_user_provider
-            custom_authenticator: App\Security\AppAuthenticator
-            logout:
-                path: app_logout
-            # You can remove form_login if you use custom_authenticator
+app_logout:
+    path: /logout
