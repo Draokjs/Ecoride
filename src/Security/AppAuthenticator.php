@@ -54,7 +54,7 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // Redirect to some "homepage" route or dashboard after login success
-        return new RedirectResponse($this->urlGenerator->generate('homepage'));
+        return new RedirectResponse($this->urlGenerator->generate('home'));
     }
 
     protected function getLoginUrl(Request $request): string
