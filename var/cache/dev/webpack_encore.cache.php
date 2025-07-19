@@ -12,23 +12,23 @@ return [[
     'entrypoints' => [
         'app' => [
             'js' => [
-                '/build/runtime.js',
-                '/build/app.js',
+                '/build/runtime.a8a970c0.js',
+                '/build/app.0a651137.js',
             ],
             'css' => [
-                '/build/app.css',
+                '/build/app.8ee65aba.css',
             ],
         ],
         'Homepage' => [
             'js' => [
-                '/build/runtime.js',
-                '/build/Homepage.js',
+                '/build/runtime.a8a970c0.js',
+                '/build/Homepage.67bbe711.js',
             ],
         ],
         'csrf_protection_controller' => [
             'js' => [
-                '/build/runtime.js',
-                '/build/csrf_protection_controller.js',
+                '/build/runtime.a8a970c0.js',
+                '/build/csrf_protection_controller.5b3ded25.js',
             ],
         ],
     ],

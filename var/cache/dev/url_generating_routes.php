@@ -28,8 +28,6 @@ return [
     'resultat' => [[], ['_controller' => 'App\\Controller\\SearchController::search'], [], [['text', '/trip']], [], [], []],
     'trip_autocomplete' => [[], ['_controller' => 'App\\Controller\\TripController::autocomplete'], [], [['text', '/trip/autocomplete']], [], [], []],
     'trip_resultat' => [[], ['_controller' => 'App\\Controller\\TripController::resultat'], [], [['text', '/trip/resultat']], [], [], []],
-    'login' => [[], ['_controller' => 'App\\Controller\\LoginController::login'], [], [['text', '/login']], [], [], []],
-    'app_homepage' => [[], ['_controller' => 'App\\Controller\\HomeController::Index'], [], [['text', '/']], [], [], []],
     'App\Controller\ContactController::index' => [[], ['_controller' => 'App\\Controller\\ContactController::index'], [], [['text', '/contact']], [], [], []],
     'App\Controller\HomeController::home' => [[], ['_controller' => 'App\\Controller\\HomeController::home'], [], [['text', '/']], [], [], []],
     'App\Controller\HomeController::searchResults' => [[], ['_controller' => 'App\\Controller\\HomeController::searchResults'], [], [['text', '/resultat']], [], [], []],
