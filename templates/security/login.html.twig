@@ -13,11 +13,12 @@
             <div class="col-12 text-center mt-4">
                 <h1>Connexion</h1>
 
-                {% if app.session.flashbag.has('error') %}
-                    <div class="alert alert-danger">
-                        {{ app.session.flashbag.get('error')[0] }}
-                    </div>
+               {% if error %}
+                  <div class="alert alert-danger">
+                  {{ error.messageKey|trans(error.messageData, 'security') }}
+                  </div>
                 {% endif %}
+
                 {% if app.session.flashbag.has('success') %}
                     <div class="alert alert-success">
                         {{ app.session.flashbag.get('success')[0] }}
