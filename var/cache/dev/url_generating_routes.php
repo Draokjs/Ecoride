@@ -4,7 +4,6 @@
 
 return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
-    'app_logout' => [[], [], [], [['text', '/logout']], [], [], []],
     '_wdt_stylesheet' => [[], ['_controller' => 'web_profiler.controller.profiler::toolbarStylesheetAction'], [], [['text', '/_wdt/styles']], [], [], []],
     '_wdt' => [['token'], ['_controller' => 'web_profiler.controller.profiler::toolbarAction'], [], [['variable', '/', '[^/]++', 'token', true], ['text', '/_wdt']], [], [], []],
     '_profiler_home' => [[], ['_controller' => 'web_profiler.controller.profiler::homeAction'], [], [['text', '/_profiler/']], [], [], []],
@@ -23,6 +22,7 @@ return [
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::home'], [], [['text', '/']], [], [], []],
     'search_results' => [[], ['_controller' => 'App\\Controller\\HomeController::searchResults'], [], [['text', '/resultat']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\LoginController::login'], [], [['text', '/login']], [], [], []],
+    'app_logout' => [[], ['_controller' => 'App\\Controller\\LoginController::logout'], [], [['text', '/logout']], [], [], []],
     'mon_espace' => [[], ['_controller' => 'App\\Controller\\MonEspaceController::index'], [], [['text', '/espace']], [], [], []],
     'app_monespace_redirecttoespace' => [[], ['_controller' => 'App\\Controller\\MonEspaceController::redirectToEspace'], [], [['text', '/Espace']], [], [], []],
     'register' => [[], ['_controller' => 'App\\Controller\\RegisterController::register'], [], [['text', '/register']], [], [], []],
@@ -33,6 +33,7 @@ return [
     'App\Controller\HomeController::home' => [[], ['_controller' => 'App\\Controller\\HomeController::home'], [], [['text', '/']], [], [], []],
     'App\Controller\HomeController::searchResults' => [[], ['_controller' => 'App\\Controller\\HomeController::searchResults'], [], [['text', '/resultat']], [], [], []],
     'App\Controller\LoginController::login' => [[], ['_controller' => 'App\\Controller\\LoginController::login'], [], [['text', '/login']], [], [], []],
+    'App\Controller\LoginController::logout' => [[], ['_controller' => 'App\\Controller\\LoginController::logout'], [], [['text', '/logout']], [], [], []],
     'App\Controller\MonEspaceController::index' => [[], ['_controller' => 'App\\Controller\\MonEspaceController::index'], [], [['text', '/espace']], [], [], []],
     'App\Controller\MonEspaceController::redirectToEspace' => [[], ['_controller' => 'App\\Controller\\MonEspaceController::redirectToEspace'], [], [['text', '/Espace']], [], [], []],
     'App\Controller\RegisterController::register' => [[], ['_controller' => 'App\\Controller\\RegisterController::register'], [], [['text', '/register']], [], [], []],

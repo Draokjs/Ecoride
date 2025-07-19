@@ -8,7 +8,6 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
-        '/logout' => [[['_route' => 'app_logout'], null, null, null, false, false, null]],
         '/_wdt/styles' => [[['_route' => '_wdt_stylesheet', '_controller' => 'web_profiler.controller.profiler::toolbarStylesheetAction'], null, null, null, false, false, null]],
         '/_profiler' => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], null, null, null, true, false, null]],
         '/_profiler/search' => [[['_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'], null, null, null, false, false, null]],
@@ -20,6 +19,7 @@ return [
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::home'], null, null, null, false, false, null]],
         '/resultat' => [[['_route' => 'search_results', '_controller' => 'App\\Controller\\HomeController::searchResults'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\LoginController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\LoginController::logout'], null, null, null, false, false, null]],
         '/espace' => [[['_route' => 'mon_espace', '_controller' => 'App\\Controller\\MonEspaceController::index'], null, null, null, false, false, null]],
         '/Espace' => [[['_route' => 'app_monespace_redirecttoespace', '_controller' => 'App\\Controller\\MonEspaceController::redirectToEspace'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\RegisterController::register'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
