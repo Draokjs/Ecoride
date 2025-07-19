@@ -26,11 +26,11 @@
                 {% endif %}
 
                 <div class="col mt-3">
-                    <form method="post" action="{{ path('app_login') }}">
+                    <form method="post" action="{{ path('app_login') }}" data-turbo="false">
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                                 <input type="email" name="email" id="email" value="{{ last_email|default('') }}"        class="form-control" required autofocus>
+                                 <input type="email" name="email" id="email" value="{{ last_username|default('') }}"        class="form-control" required autofocus>
                         </div>
 
                         <div class="mb-3">
