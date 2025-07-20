@@ -31,6 +31,7 @@ class __TwigTemplate_6e7d7a60d96c6fd2af1f247bc18b9cc9 extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'head' => [$this, 'block_head'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
@@ -89,19 +90,17 @@ class __TwigTemplate_6e7d7a60d96c6fd2af1f247bc18b9cc9 extends Template
     /**
      * @return iterable<null|scalar|\Stringable>
      */
-    public function block_stylesheets(array $context, array $blocks = []): iterable
+    public function block_head(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "head"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "head"));
 
         // line 6
-        yield "    ";
-        yield $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
-        yield "
+        yield "    <meta name=\"turbo-visit-control\" content=\"reload\">
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -116,6 +115,33 @@ class __TwigTemplate_6e7d7a60d96c6fd2af1f247bc18b9cc9 extends Template
     /**
      * @return iterable<null|scalar|\Stringable>
      */
+    public function block_stylesheets(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 10
+        yield "    ";
+        yield $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
+        yield "
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 13
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
     public function block_body(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
@@ -125,54 +151,57 @@ class __TwigTemplate_6e7d7a60d96c6fd2af1f247bc18b9cc9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 10
+        // line 14
         yield "<main>
     <div class=\"connexionForm\">
         <div class=\"container\">
             <div class=\"col-12 text-center mt-4\">
                 <h1>Connexion</h1>
 
-                ";
-        // line 16
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "session", [], "any", false, false, false, 16), "flashbag", [], "any", false, false, false, 16), "has", ["error"], "method", false, false, false, 16)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 17
-            yield "                    <div class=\"alert alert-danger\">
-                        ";
-            // line 18
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "session", [], "any", false, false, false, 18), "flashbag", [], "any", false, false, false, 18), "get", ["error"], "method", false, false, false, 18), 0, [], "array", false, false, false, 18), "html", null, true);
+               ";
+        // line 20
+        if ((($tmp = (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 20, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 21
+            yield "                  <div class=\"alert alert-danger\">
+                  ";
+            // line 22
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(CoreExtension::getAttribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 22, $this->source); })()), "messageKey", [], "any", false, false, false, 22), CoreExtension::getAttribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 22, $this->source); })()), "messageData", [], "any", false, false, false, 22), "security"), "html", null, true);
             yield "
-                    </div>
+                  </div>
                 ";
         }
-        // line 21
-        yield "                ";
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "session", [], "any", false, false, false, 21), "flashbag", [], "any", false, false, false, 21), "has", ["success"], "method", false, false, false, 21)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 22
+        // line 25
+        yield "
+                ";
+        // line 26
+        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "session", [], "any", false, false, false, 26), "flashbag", [], "any", false, false, false, 26), "has", ["success"], "method", false, false, false, 26)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 27
             yield "                    <div class=\"alert alert-success\">
                         ";
-            // line 23
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 23, $this->source); })()), "session", [], "any", false, false, false, 23), "flashbag", [], "any", false, false, false, 23), "get", ["success"], "method", false, false, false, 23), 0, [], "array", false, false, false, 23), "html", null, true);
+            // line 28
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "session", [], "any", false, false, false, 28), "flashbag", [], "any", false, false, false, 28), "get", ["success"], "method", false, false, false, 28), 0, [], "array", false, false, false, 28), "html", null, true);
             yield "
                     </div>
                 ";
         }
-        // line 26
+        // line 31
         yield "
                 <div class=\"col mt-3\">
                     <form method=\"post\" action=\"";
-        // line 28
+        // line 33
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        yield "\">
+        yield "\" data-turbo=\"false\">
                         <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 29
+        // line 34
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         yield "\">
                         <div class=\"mb-3\">
                             <label for=\"email\" class=\"form-label\">Email</label>
-                            <input type=\"email\" name=\"email\" id=\"email\" value=\"";
-        // line 32
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((array_key_exists("last_username", $context)) ? (Twig\Extension\CoreExtension::default((isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 32, $this->source); })()), "")) : ("")), "html", null, true);
-        yield "\" class=\"form-control\" required autofocus>
+                                 <input type=\"email\" name=\"email\" id=\"email\" value=\"";
+        // line 37
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["last_email"]) || array_key_exists("last_email", $context) ? $context["last_email"] : (function () { throw new RuntimeError('Variable "last_email" does not exist.', 37, $this->source); })()), "html", null, true);
+        yield "\"
+                                class=\"form-control\" required autofocus>
                         </div>
 
                         <div class=\"mb-3\">
@@ -187,12 +216,6 @@ class __TwigTemplate_6e7d7a60d96c6fd2af1f247bc18b9cc9 extends Template
         </div>
     </div>
 </main>
-
-";
-        // line 48
-        yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 51
-        yield "
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -203,7 +226,7 @@ class __TwigTemplate_6e7d7a60d96c6fd2af1f247bc18b9cc9 extends Template
         yield from [];
     }
 
-    // line 48
+    // line 55
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -216,7 +239,7 @@ class __TwigTemplate_6e7d7a60d96c6fd2af1f247bc18b9cc9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 49
+        // line 56
         yield "   ";
         yield $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         yield "
@@ -251,7 +274,7 @@ class __TwigTemplate_6e7d7a60d96c6fd2af1f247bc18b9cc9 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  220 => 49,  207 => 48,  195 => 51,  193 => 48,  174 => 32,  168 => 29,  164 => 28,  160 => 26,  154 => 23,  151 => 22,  148 => 21,  142 => 18,  139 => 17,  137 => 16,  129 => 10,  116 => 9,  102 => 6,  89 => 5,  66 => 3,  43 => 1,);
+        return array (  243 => 56,  230 => 55,  202 => 37,  196 => 34,  192 => 33,  188 => 31,  182 => 28,  179 => 27,  177 => 26,  174 => 25,  168 => 22,  165 => 21,  163 => 20,  155 => 14,  142 => 13,  128 => 10,  115 => 9,  103 => 6,  90 => 5,  67 => 3,  44 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -259,6 +282,10 @@ class __TwigTemplate_6e7d7a60d96c6fd2af1f247bc18b9cc9 extends Template
         return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}Ecoride login page{% endblock %}
+
+{% block head %}
+    <meta name=\"turbo-visit-control\" content=\"reload\">
+{% endblock %}
 
 {% block stylesheets %}
     {{ encore_entry_link_tags('app') }}
@@ -271,11 +298,12 @@ class __TwigTemplate_6e7d7a60d96c6fd2af1f247bc18b9cc9 extends Template
             <div class=\"col-12 text-center mt-4\">
                 <h1>Connexion</h1>
 
-                {% if app.session.flashbag.has('error') %}
-                    <div class=\"alert alert-danger\">
-                        {{ app.session.flashbag.get('error')[0] }}
-                    </div>
+               {% if error %}
+                  <div class=\"alert alert-danger\">
+                  {{ error.messageKey|trans(error.messageData, 'security') }}
+                  </div>
                 {% endif %}
+
                 {% if app.session.flashbag.has('success') %}
                     <div class=\"alert alert-success\">
                         {{ app.session.flashbag.get('success')[0] }}
@@ -283,11 +311,12 @@ class __TwigTemplate_6e7d7a60d96c6fd2af1f247bc18b9cc9 extends Template
                 {% endif %}
 
                 <div class=\"col mt-3\">
-                    <form method=\"post\" action=\"{{ path('app_login') }}\">
+                    <form method=\"post\" action=\"{{ path('app_login') }}\" data-turbo=\"false\">
                         <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token('authenticate') }}\">
                         <div class=\"mb-3\">
                             <label for=\"email\" class=\"form-label\">Email</label>
-                            <input type=\"email\" name=\"email\" id=\"email\" value=\"{{ last_username|default('') }}\" class=\"form-control\" required autofocus>
+                                 <input type=\"email\" name=\"email\" id=\"email\" value=\"{{ last_email }}\"
+                                class=\"form-control\" required autofocus>
                         </div>
 
                         <div class=\"mb-3\">
@@ -302,13 +331,12 @@ class __TwigTemplate_6e7d7a60d96c6fd2af1f247bc18b9cc9 extends Template
         </div>
     </div>
 </main>
+{% endblock %}
 
 {% block javascripts %}
    {{ encore_entry_script_tags('app') }}
 {% endblock %}
 
-{% endblock %}
-
-", "security/login.html.twig", "C:\\Ecoride symfony\\my_project\\templates\\security\\login.html.twig");
+", "security/login.html.twig", "C:\\Ecoride_symfony\\templates\\security\\login.html.twig");
     }
 }

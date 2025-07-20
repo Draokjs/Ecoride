@@ -501,6 +501,6 @@ class __TwigTemplate_d68eb7179ebbfea6fdcfb4d2669cd749 extends Template
     {{ encore_entry_script_tags('csrf_protection_controller') }}
 {% endblock %}
 
-", "security/register.html.twig", "C:\\Ecoride symfony\\my_project\\templates\\security\\register.html.twig");
+", "security/register.html.twig", "C:\\Ecoride_symfony\\templates\\security\\register.html.twig");
     }
 }

@@ -1943,6 +1943,6 @@ class __TwigTemplate_293c5b8b331946770cf47562767a2f3b extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "C:\\Ecoride symfony\\my_project\\vendor\\doctrine\\doctrine-bundle\\templates\\Collector\\db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "C:\\Ecoride_symfony\\vendor\\doctrine\\doctrine-bundle\\templates\\Collector\\db.html.twig");
     }
 }

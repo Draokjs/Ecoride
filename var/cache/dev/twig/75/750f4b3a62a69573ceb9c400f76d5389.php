@@ -231,6 +231,6 @@ class __TwigTemplate_dd161655d8e5924d02c4d97b690a2ac4 extends Template
 {% endif %}
 {% endblock %}
 
-", "espace/mon_espace.html.twig", "C:\\Ecoride symfony\\my_project\\templates\\espace\\mon_espace.html.twig");
+", "espace/mon_espace.html.twig", "C:\\Ecoride_symfony\\templates\\espace\\mon_espace.html.twig");
     }
 }

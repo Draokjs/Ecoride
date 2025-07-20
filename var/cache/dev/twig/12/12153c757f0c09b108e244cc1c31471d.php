@@ -80,7 +80,7 @@ class __TwigTemplate_503011c7e0a3c843499c31065c714117 extends Template
             // line 18
             yield "            <a class=\"nav-link\" href=\"";
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            yield "\">Connexion</a>
+            yield "\">Mon Espace</a>
           ";
         }
         // line 20
@@ -170,7 +170,7 @@ class __TwigTemplate_503011c7e0a3c843499c31065c714117 extends Template
           {% if app.user %}
             <a class=\"nav-link\" href=\"{{ path('mon_espace') }}\">Mon Espace</a>
           {% else %}
-            <a class=\"nav-link\" href=\"{{ path('app_login') }}\">Connexion</a>
+            <a class=\"nav-link\" href=\"{{ path('app_login') }}\">Mon Espace</a>
           {% endif %}
         </div>
         <div class=\"col-md-2 text-center fs-4 menu-item\" id=\"Contacts\">
@@ -196,6 +196,6 @@ class __TwigTemplate_503011c7e0a3c843499c31065c714117 extends Template
     </div>
   </nav>
 </header>
-", "partials/header.html.twig", "C:\\Ecoride symfony\\my_project\\templates\\partials\\header.html.twig");
+", "partials/header.html.twig", "C:\\Ecoride_symfony\\templates\\partials\\header.html.twig");
     }
 }

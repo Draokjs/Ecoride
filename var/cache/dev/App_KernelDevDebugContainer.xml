@@ -115,11 +115,11 @@
     <parameter key="kernel.secret">%env(APP_SECRET)%</parameter>
     <parameter key="kernel.http_method_override">false</parameter>
     <parameter key="kernel.trust_x_sendfile_type_header">%env(bool:default::SYMFONY_TRUST_X_SENDFILE_TYPE_HEADER)%</parameter>
-    <parameter key="kernel.trusted_hosts">%env(default::SYMFONY_TRUSTED_HOSTS)%</parameter>
+    <parameter key="kernel.trusted_hosts">^.+$</parameter>
     <parameter key="kernel.default_locale">en</parameter>
     <parameter key="kernel.enabled_locales" type="collection"/>
     <parameter key="kernel.error_controller">error_controller</parameter>
-    <parameter key="kernel.trusted_proxies">%env(default::SYMFONY_TRUSTED_PROXIES)%</parameter>
+    <parameter key="kernel.trusted_proxies">127.0.0.1,REMOTE_ADDR</parameter>
     <parameter key="kernel.trusted_headers">%env(default::SYMFONY_TRUSTED_HEADERS)%</parameter>
     <parameter key="debug.file_link_format">%env(default::SYMFONY_IDE)%</parameter>
     <parameter key="asset.request_context.base_path">null</parameter>

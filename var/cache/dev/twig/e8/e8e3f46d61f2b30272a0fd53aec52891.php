@@ -237,6 +237,6 @@ class __TwigTemplate_1cd162cc651b83e8116d10048a5aee93 extends Template
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js\"></script>
 {% endblock %}
 
-", "trip/resultat.html.twig", "C:\\Ecoride symfony\\my_project\\templates\\trip\\resultat.html.twig");
+", "trip/resultat.html.twig", "C:\\Ecoride_symfony\\templates\\trip\\resultat.html.twig");
     }
 }
