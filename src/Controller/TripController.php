@@ -33,11 +33,11 @@ class TripController extends AbstractController
     #[Route('/trip/resultat', name: 'trip_resultat')]
     public function resultat(Request $request, TripRepository $tripRepo): Response
     {
-        $villeDepart = $request->query->get('villeDepart');
-        $villeArrivee = $request->query->get('villeArrivee');
-        $dateDepart = $request->query->get('dateDepart');
-        $dateArrivee = $request->query->get('dateArrivee');
-        $nombrePassagers = $request->query->get('nombrePassagers');
+        $villeDepart = $request->query->get('villeDepart', '');
+        $villeArrivee = $request->query->get('villeArrivee', '');
+        $dateDepart = $request->query->get('dateDepart', '');
+        $dateArrivee = $request->query->get('dateArrivee', '');
+        $nombrePassagers = $request->query->get('nombrePassagers', '');
         
         try {
             $dateDepartObj = $dateDepart ? new \DateTime($dateDepart) : null;
@@ -46,6 +46,14 @@ class TripController extends AbstractController
             $dateDepartObj = null;
             $dateArriveeObj = null;
         }
+
+        $search = [
+            'departure' => $villeDepart,
+            'arrival' => $villeArrivee,
+            'dateDeparture' => $dateDepart,
+            'dateArrivee' => $dateArrivee,
+            'numberOfPassengers' => $nombrePassagers,
+        ];
 
         $trips = $tripRepo->findBy([
             'villeDepart' => $villeDepart,
@@ -56,13 +64,7 @@ class TripController extends AbstractController
 
         return $this->render('trip/resultat.html.twig', [
             'trips' => $trips,
-            'search' => [
-                'departure' => $villeDepart,
-                'arrival' => $villeArrivee,
-                'dateDeparture' => $dateDepart,
-                'dateArrivee' => $dateArrivee,
-                'numberOfPassengers' => $nombrePassagers,
-            ],
+            'search' => $search,
         ]);
     }
 }
