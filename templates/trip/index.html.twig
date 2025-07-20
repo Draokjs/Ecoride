@@ -5,7 +5,7 @@
 {% block body %}
   <h1>Liste des covoiturages</h1>
 
-  <form method="GET" action="{{ path('trip_search') }}">
+  <form method="GET" action="{{ path('trip_resultat') }}">
     <label for="villeDepart">Ville de départ:</label>
     <input type="text" id="villeDepart" name="villeDepart" autocomplete="off" data-type="depart" class="autocomplete">
     <ul id="suggestions-depart" class="suggestions-list"></ul>

@@ -62,9 +62,11 @@ class TripController extends AbstractController
             'dateArrivee' => $dateArriveeObj
         ]);
 
+        dump($request->query->all());
+
         return $this->render('trip/resultat.html.twig', [
             'trips' => $trips,
-            'search' => $request->query->all()['search'] ?? [],
+            'search' => $search,
         ]);
     }
 }
