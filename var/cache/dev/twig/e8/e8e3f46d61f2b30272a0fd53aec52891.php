@@ -75,51 +75,61 @@ class __TwigTemplate_1cd162cc651b83e8116d10048a5aee93 extends Template
 
         // line 4
         yield "<div class=\"container my-5\">
+  <h2 id=\"result-title\"></h2>
+  <div class=\"mb-4\">
+    <p class=\"lead\" id=\"Valuedeparture\"></p>
+    <p class=\"lead\" id=\"Datedeparture\"></p>
+    <div class=\"alert alert-primary\" id=\"Tripresultdate\" role=\"alert\"></div>
+    <p class=\"lead\" id=\"Tripstart\"></p>
+    <p class=\"lead\" id=\"Tripend\"></p>
+    <p class=\"lead\" id=\"TripPrice\"></p>
+    <p class=\"lead\" id=\"Triplength\"></p>
+  </div>
   <h2 class=\"mb-4\">Résultats :</h2>
 
   ";
-        // line 7
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "session", [], "any", false, false, false, 7), "flashbag", [], "any", false, false, false, 7), "has", ["success"], "method", false, false, false, 7)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 8
+        // line 17
+        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "session", [], "any", false, false, false, 17), "flashbag", [], "any", false, false, false, 17), "has", ["success"], "method", false, false, false, 17)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 18
             yield "    <div class=\"alert alert-success\">
       ";
-            // line 9
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "session", [], "any", false, false, false, 9), "flashbag", [], "any", false, false, false, 9), "get", ["success"], "method", false, false, false, 9), 0, [], "array", false, false, false, 9), "html", null, true);
+            // line 19
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "session", [], "any", false, false, false, 19), "flashbag", [], "any", false, false, false, 19), "get", ["success"], "method", false, false, false, 19), 0, [], "array", false, false, false, 19), "html", null, true);
             yield "
     </div>
   ";
         }
-        // line 12
+        // line 22
         yield "
   ";
-        // line 13
-        if ((($tmp =  !Twig\Extension\CoreExtension::testEmpty((isset($context["trips"]) || array_key_exists("trips", $context) ? $context["trips"] : (function () { throw new RuntimeError('Variable "trips" does not exist.', 13, $this->source); })()))) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 14
+        // line 23
+        if ((($tmp =  !Twig\Extension\CoreExtension::testEmpty((isset($context["trips"]) || array_key_exists("trips", $context) ? $context["trips"] : (function () { throw new RuntimeError('Variable "trips" does not exist.', 23, $this->source); })()))) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 24
             yield "    <ul class=\"list-group\">
       ";
-            // line 15
+            // line 25
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["trips"]) || array_key_exists("trips", $context) ? $context["trips"] : (function () { throw new RuntimeError('Variable "trips" does not exist.', 15, $this->source); })()));
+            $context['_seq'] = CoreExtension::ensureTraversable((isset($context["trips"]) || array_key_exists("trips", $context) ? $context["trips"] : (function () { throw new RuntimeError('Variable "trips" does not exist.', 25, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["trip"]) {
-                // line 16
+                // line 26
                 yield "        <li class=\"list-group-item\">
           <strong>";
-                // line 17
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["trip"], "villeDepart", [], "any", false, false, false, 17), "html", null, true);
+                // line 27
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["trip"], "villeDepart", [], "any", false, false, false, 27), "html", null, true);
                 yield "</strong> → <strong>";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["trip"], "villeArrivee", [], "any", false, false, false, 17), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["trip"], "villeArrivee", [], "any", false, false, false, 27), "html", null, true);
                 yield "</strong><br>
           Départ : ";
-                // line 18
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["trip"], "dateDepart", [], "any", false, false, false, 18), "d/m/Y"), "html", null, true);
+                // line 28
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["trip"], "dateDepart", [], "any", false, false, false, 28), "d/m/Y"), "html", null, true);
                 yield "<br>
           Arrivée : ";
-                // line 19
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["trip"], "dateArrivee", [], "any", false, false, false, 19), "d/m/Y"), "html", null, true);
+                // line 29
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["trip"], "dateArrivee", [], "any", false, false, false, 29), "d/m/Y"), "html", null, true);
                 yield "<br>
           Places disponibles : ";
-                // line 20
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["trip"], "nombrePassagers", [], "any", false, false, false, 20), "html", null, true);
+                // line 30
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["trip"], "nombrePassagers", [], "any", false, false, false, 30), "html", null, true);
                 yield "
         </li>
       ";
@@ -127,15 +137,15 @@ class __TwigTemplate_1cd162cc651b83e8116d10048a5aee93 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['trip'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 23
+            // line 33
             yield "    </ul>
   ";
         } else {
-            // line 25
+            // line 35
             yield "    <div class=\"alert alert-warning mt-4\">Aucun trajet trouvé avec ces critères.</div>
   ";
         }
-        // line 27
+        // line 37
         yield "</div>
 ";
         
@@ -147,7 +157,7 @@ class __TwigTemplate_1cd162cc651b83e8116d10048a5aee93 extends Template
         yield from [];
     }
 
-    // line 30
+    // line 40
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -160,7 +170,7 @@ class __TwigTemplate_1cd162cc651b83e8116d10048a5aee93 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 31
+        // line 41
         yield "<script src=\"";
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/Resultat.js"), "html", null, true);
         yield "\"></script>
@@ -197,7 +207,7 @@ class __TwigTemplate_1cd162cc651b83e8116d10048a5aee93 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  164 => 31,  151 => 30,  139 => 27,  135 => 25,  131 => 23,  122 => 20,  118 => 19,  114 => 18,  108 => 17,  105 => 16,  101 => 15,  98 => 14,  96 => 13,  93 => 12,  87 => 9,  84 => 8,  82 => 7,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  174 => 41,  161 => 40,  149 => 37,  145 => 35,  141 => 33,  132 => 30,  128 => 29,  124 => 28,  118 => 27,  115 => 26,  111 => 25,  108 => 24,  106 => 23,  103 => 22,  97 => 19,  94 => 18,  92 => 17,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -206,6 +216,16 @@ class __TwigTemplate_1cd162cc651b83e8116d10048a5aee93 extends Template
 
 {% block body %}
 <div class=\"container my-5\">
+  <h2 id=\"result-title\"></h2>
+  <div class=\"mb-4\">
+    <p class=\"lead\" id=\"Valuedeparture\"></p>
+    <p class=\"lead\" id=\"Datedeparture\"></p>
+    <div class=\"alert alert-primary\" id=\"Tripresultdate\" role=\"alert\"></div>
+    <p class=\"lead\" id=\"Tripstart\"></p>
+    <p class=\"lead\" id=\"Tripend\"></p>
+    <p class=\"lead\" id=\"TripPrice\"></p>
+    <p class=\"lead\" id=\"Triplength\"></p>
+  </div>
   <h2 class=\"mb-4\">Résultats :</h2>
 
   {% if app.session.flashbag.has('success') %}

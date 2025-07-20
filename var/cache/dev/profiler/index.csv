@@ -216,3 +216,12 @@ dfb1ee,127.0.0.1,GET,https://127.0.0.1:8000/espace,1753050040,,200,request
 fd66f4,127.0.0.1,GET,https://127.0.0.1:8000/trip/resultat,1753050041,,200,request
 46e3b5,127.0.0.1,GET,https://127.0.0.1:8000/,1753050042,,200,request
 e2882e,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-01&search%5Bdate_arrivee%5D=2025-07-23&search%5Bnombre_passagers%5D=1&search%5B_token%5D=HkjXfl4F4WNngJVjE0jpzB84,1753050057,,200,request
+4788b4,127.0.0.1,GET,https://127.0.0.1:8000/,1753050804,,200,request
+0e89a8,127.0.0.1,GET,https://127.0.0.1:8000/espace,1753050805,,200,request
+e0b15e,127.0.0.1,GET,https://127.0.0.1:8000/,1753050812,,200,request
+50ce14,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-09&search%5Bdate_arrivee%5D=2025-07-23&search%5Bnombre_passagers%5D=1&search%5B_token%5D=UY2OfzjZy8zHXvapk8MNGF%2Bl,1753050833,,200,request
+837079,127.0.0.1,GET,https://127.0.0.1:8000/,1753051368,,200,request
+983857,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-15&search%5Bdate_arrivee%5D=2025-07-23&search%5Bnombre_passagers%5D=1&search%5B_token%5D=JvjFwlwbq2IvknpGW%2FTi7Us7,1753051419,,200,request
+3d7b6f,127.0.0.1,GET,https://127.0.0.1:8000/,1753051425,,200,request
+3a2720,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-15&search%5Bdate_arrivee%5D=2025-07-23&search%5Bnombre_passagers%5D=1&search%5B_token%5D=JvjFwlwbq2IvknpGW%2FTi7Us7,1753051450,,200,request
+0fe572,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-15&search%5Bdate_arrivee%5D=2025-07-23&search%5Bnombre_passagers%5D=1&search%5B_token%5D=JvjFwlwbq2IvknpGW%2FTi7Us7,1753051592,,200,request
