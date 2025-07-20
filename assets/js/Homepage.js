@@ -9,14 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const temp = departure.value;
       departure.value = arrival.value;
       arrival.value = temp;
-      console.log("Swapped:", departure.value, "<>", arrival.value);
-    });
-    console.log("Listener attached");
-  } else {
-    console.log("Input(s) not found:", {
-      arrowBtnExists: !!arrowBtn,
-      departureId: departure ? departure.id : null,
-      arrivalId: arrival ? arrival.id : null,
     });
   }
 
@@ -50,9 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     searchForm.addEventListener("submit", event => {
       if (!validateForm()) {
         event.preventDefault();
-      } else {
-        console.log("Departure:", departure?.value);
-        console.log("Arrival:", arrival?.value);
       }
     });
   }
