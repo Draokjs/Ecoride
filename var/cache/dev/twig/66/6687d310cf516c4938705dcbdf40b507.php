@@ -456,6 +456,6 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
 
 {% endblock %}
 
-", "home/homepage.html.twig", "C:\\Ecoride symfony\\my_project\\templates\\home\\homepage.html.twig");
+", "home/homepage.html.twig", "C:\\Ecoride_symfony\\templates\\home\\homepage.html.twig");
     }
 }

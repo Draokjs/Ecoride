@@ -143,6 +143,6 @@ class __TwigTemplate_7f351865f640a9e57d9f43622f9bd6d3 extends Template
 <h1>Contactez-nous</h1>
 <p>Voici la page de contact.</p>
 {% endblock %}
-", "contact/contact.html.twig", "C:\\Ecoride symfony\\my_project\\templates\\contact\\contact.html.twig");
+", "contact/contact.html.twig", "C:\\Ecoride_symfony\\templates\\contact\\contact.html.twig");
     }
 }

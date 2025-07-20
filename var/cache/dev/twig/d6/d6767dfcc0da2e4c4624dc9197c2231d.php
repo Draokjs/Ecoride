@@ -187,6 +187,6 @@ class __TwigTemplate_894cb2dcb93da6a6db3a27d2fde8473d extends Template
     © 2025 Copyright
   </div>
 </footer>
-", "partials/footer.html.twig", "C:\\Ecoride symfony\\my_project\\templates\\partials\\footer.html.twig");
+", "partials/footer.html.twig", "C:\\Ecoride_symfony\\templates\\partials\\footer.html.twig");
     }
 }
