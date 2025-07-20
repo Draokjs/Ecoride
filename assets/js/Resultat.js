@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   // --- Load and display search data ---
-  const rawSearch = localStorage.getItem("search");
-  const searchData = rawSearch && rawSearch !== "null" ? JSON.parse(rawSearch) : {};
+  const searchData = window.searchData || {};
 
   const valDep = document.getElementById("valuedeparture");
   if (valDep && searchData.departure && searchData.arrival) {

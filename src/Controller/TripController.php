@@ -60,7 +60,7 @@ class TripController extends AbstractController
                 'departure' => $villeDepart,
                 'arrival' => $villeArrivee,
                 'dateDeparture' => $dateDepart,
-                'dateArrival' => $dateArrivee,
+                'dateArrivee' => $dateArrivee,
                 'numberOfPassengers' => $nombrePassagers,
             ],
         ]);
