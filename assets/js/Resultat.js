@@ -72,24 +72,4 @@ document.addEventListener('DOMContentLoaded', () => {
       tripLengthEl.innerHTML = `Direct : ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
     }
   }
-
-  // --- Handle form toggle ---
-  const myButton = document.getElementById("modifybutton");
-  const myForm = document.querySelector(".form");
-
-  if (myButton && myForm) {
-    myForm.style.display = "none";
-
-    myButton.addEventListener("click", () => {
-      const isHidden = getComputedStyle(myForm).display === "none";
-      myForm.style.display = isHidden ? "block" : "none";
-      myForm.style.background = isHidden ? "white" : "transparent";
-    });
-
-    myForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      if (getComputedStyle(myForm).display === "none") return;
-      alert("Form submitted!");
-    });
-  }
 });

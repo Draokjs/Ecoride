@@ -225,3 +225,5 @@ e0b15e,127.0.0.1,GET,https://127.0.0.1:8000/,1753050812,,200,request
 3d7b6f,127.0.0.1,GET,https://127.0.0.1:8000/,1753051425,,200,request
 3a2720,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-15&search%5Bdate_arrivee%5D=2025-07-23&search%5Bnombre_passagers%5D=1&search%5B_token%5D=JvjFwlwbq2IvknpGW%2FTi7Us7,1753051450,,200,request
 0fe572,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-15&search%5Bdate_arrivee%5D=2025-07-23&search%5Bnombre_passagers%5D=1&search%5B_token%5D=JvjFwlwbq2IvknpGW%2FTi7Us7,1753051592,,200,request
+91d4ba,127.0.0.1,GET,https://127.0.0.1:8000/,1753051635,,200,request
+dc57ce,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-16&search%5Bdate_arrivee%5D=2025-07-23&search%5Bnombre_passagers%5D=1&search%5B_token%5D=z7OcXVbY%2B4yxaZcxWljsIB1M,1753051650,,200,request
