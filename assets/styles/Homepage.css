@@ -83,3 +83,89 @@ main {
   margin-bottom: 20vh;
   max-height: fit-content;
 }
+
+/* Menu link*/
+.nav-link {
+    text-decoration: none; 
+    color: black;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    background-color: #19aea3;
+    opacity: 0.8;
+    height: 100%;
+  }
+
+/* Background */
+/* #homepage-main {
+  background-image: url("../images/green-nature-road-high-quality-desktop-gb0j67jya0bilxuq.jpg");
+  background-repeat: repeat-x;
+  background-size: 31% 31%;
+} */
+
+/* Arrow rotation */
+  #arrow {
+    transition: transform 0.3s ease;
+    transform: translateY(20px);
+  }
+
+  #arrow:active {
+    transform: scale(1.2);
+  }
+
+  /* Submit button */
+  #submit {
+    background-color: var(--bs-complementary-color);
+    font-size: 1.5rem;
+  }
+/* 
+  Dropdown item */
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--bs-main-color) !important;
+}
+
+/* Search */
+#search {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--bs-main-color);
+  height: fit-content;
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Image description  */
+#image1 {
+  height: 41vh;
+  margin-left: 15vw;
+}
+
+#image2 {
+  height:70vh;
+  margin-left: 5vw;
+}
+
+/* Dropdown */
+ #dropdownMenuButton1{
+  border: none; 
+  background-color: transparent;
+}
+
+/* ERROR message */
+
+.error-message {
+  color: red;
+  font-size: 0.85em;
+}
+input:invalid {
+  border-color: red;
+}
+
+main {
+  margin-bottom: 20vh;
+  max-height: fit-content;
+}
