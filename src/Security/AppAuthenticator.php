@@ -14,6 +14,8 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Credentials\PasswordC
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 use Psr\Log\LoggerInterface;
+use Symfony\Bundle\SecurityBundle\Security;
+
 
 class AppAuthenticator extends AbstractLoginFormAuthenticator
 {
@@ -42,7 +44,7 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
             throw new InvalidPasswordException('Password cannot be empty');
         }
 
-        $request->getSession()->set(Security::LAST_USERNAME, $email);
+       $request->getSession()->set('_security.last_username', $email);
 
         return new Passport(
             new UserBadge($email),
@@ -56,7 +58,7 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
     public function onAuthenticationSuccess(Request $request, $token, string $firewallName): ?RedirectResponse
     {
         // Log the user's successful login attempt
-        $this->logger->info('User logged in successfully', ['username' => $token->getUserIdentifier()]);
+        $this->logger->info('User logged in successfully', ['mail' => $token->getUserIdentifier()]);
 
         // Si l'utilisateur avait une URL cible (ex: page protégée visitée avant login), redirige vers cette URL
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
