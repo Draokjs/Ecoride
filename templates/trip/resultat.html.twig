@@ -2,17 +2,8 @@
 
 {% block body %}
 <div class="container my-5">
-  <h2 id="result-title"></h2>
-  <div class="mb-4">
-    <p class="lead" id="Valuedeparture"></p>
-    <p class="lead" id="Datedeparture"></p>
-    <div class="alert alert-primary" id="Tripresultdate" role="alert"></div>
-    <p class="lead" id="Tripstart"></p>
-    <p class="lead" id="Tripend"></p>
-    <p class="lead" id="TripPrice"></p>
-    <p class="lead" id="Triplength"></p>
-  </div>
-  <h2 class="mb-4">Résultats :</h2>
+
+  <h2 class="mb-4" id="result-title">Résultats :</h2>
 
   {% if app.session.flashbag.has('success') %}
     <div class="alert alert-success">
