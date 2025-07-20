@@ -1,14 +1,3 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+    resource: '../src/Controller/'
     type: attribute
-
-login:
-    path: /login
-    controller: App\Controller\LoginController::login
-
-app_homepage:
-    path: /
-    controller: App\Controller\HomeController::Index
-

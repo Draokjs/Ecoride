@@ -13,11 +13,12 @@
             <div class="col-12 text-center mt-4">
                 <h1>Connexion</h1>
 
-                {% if app.session.flashbag.has('error') %}
-                    <div class="alert alert-danger">
-                        {{ app.session.flashbag.get('error')[0] }}
-                    </div>
+               {% if error %}
+                  <div class="alert alert-danger">
+                  {{ error.messageKey|trans(error.messageData, 'security') }}
+                  </div>
                 {% endif %}
+
                 {% if app.session.flashbag.has('success') %}
                     <div class="alert alert-success">
                         {{ app.session.flashbag.get('success')[0] }}
@@ -25,11 +26,12 @@
                 {% endif %}
 
                 <div class="col mt-3">
-                    <form method="post" action="{{ path('app_login') }}">
+                    <form method="post" action="{{ path('app_login') }}" data-turbo="false">
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" name="email" id="email" value="{{ last_username|default('') }}" class="form-control" required autofocus>
+                                 <input type="email" name="email" id="email" value="{{ last_email }}"
+                                class="form-control" required autofocus>
                         </div>
 
                         <div class="mb-3">
@@ -44,10 +46,10 @@
         </div>
     </div>
 </main>
+{% endblock %}
 
 {% block javascripts %}
    {{ encore_entry_script_tags('app') }}
 {% endblock %}
 
-{% endblock %}
 

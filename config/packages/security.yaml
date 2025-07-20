@@ -16,19 +16,13 @@ security:
         main:
             lazy: true
             provider: app_user_provider
-
-            form_login:
-                login_path: app_login
-                check_path: app_login
-                default_target_path: app_homepage
-                username_parameter: email
-                password_parameter: password
-
+            custom_authenticator: App\Security\AppAuthenticator
             logout:
-                path: logout
-                target: app_login
+                path: app_logout
+                # optional target: some_route
 
     access_control:
         - { path: ^/login, roles: PUBLIC_ACCESS }
         - { path: ^/register, roles: PUBLIC_ACCESS }
+        - { path: ^/logout, roles: PUBLIC_ACCESS }
         - { path: ^/, roles: ROLE_USER }
