@@ -234,3 +234,14 @@ af1c4f,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&
 fb600a,127.0.0.1,GET,https://127.0.0.1:8000/,1753052407,,200,request
 a5878f,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-16&search%5Bdate_arrivee%5D=2025-07-30&search%5Bnombre_passagers%5D=1&search%5B_token%5D=sFsVAy%2BG0Dp2XNcYLY2CXAM5,1753052414,f289da,500,request
 f289da,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-16&search%5Bdate_arrivee%5D=2025-07-30&search%5Bnombre_passagers%5D=1&search%5B_token%5D=sFsVAy%2BG0Dp2XNcYLY2CXAM5,1753052414,,500,request
+c412c6,127.0.0.1,GET,https://127.0.0.1:8000/,1753052543,,200,request
+4472f3,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-16&search%5Bdate_arrivee%5D=2025-07-30&search%5Bnombre_passagers%5D=1&search%5B_token%5D=9%2BMiMCd2ZQkfQR5uPB8TMHeZ,1753052549,ff603d,500,request
+ff603d,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-16&search%5Bdate_arrivee%5D=2025-07-30&search%5Bnombre_passagers%5D=1&search%5B_token%5D=9%2BMiMCd2ZQkfQR5uPB8TMHeZ,1753052549,,500,request
+921fe1,127.0.0.1,GET,https://127.0.0.1:8000/,1753052555,,200,request
+4f117f,127.0.0.1,GET,https://127.0.0.1:8000/trip/resultat,1753052556,,200,request
+c3988b,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-01&search%5Bdate_arrivee%5D=2025-08-29&search%5Bnombre_passagers%5D=2&search%5B_token%5D=aaD4UG3EwR%2BRiVIWtnoc%2FD3W,1753052570,e3ad51,500,request
+e3ad51,127.0.0.1,GET,https://127.0.0.1:8000/trip?search%5BVille_depart%5D=Paris&search%5BVille_arrivee%5D=Rennes&search%5Bdate_depart%5D=2025-07-01&search%5Bdate_arrivee%5D=2025-08-29&search%5Bnombre_passagers%5D=2&search%5B_token%5D=aaD4UG3EwR%2BRiVIWtnoc%2FD3W,1753052570,,500,request
+2d80a1,127.0.0.1,GET,https://127.0.0.1:8000//trip/resultat?dateDepart=2025-07-20&nombrePassagers=3&villeArrivee=Marseille&villeDepart=Paris,1753052655,1d4b02,404,request
+1d4b02,127.0.0.1,GET,https://127.0.0.1:8000//trip/resultat?dateDepart=2025-07-20&nombrePassagers=3&villeArrivee=Marseille&villeDepart=Paris,1753052655,,404,request
+960c4f,127.0.0.1,GET,https://127.0.0.1:8000//trip/resultat?dateDepart=2025-07-20&nombrePassagers=3&villeArrivee=Marseille&villeDepart=Paris,1753052664,4c1571,404,request
+4c1571,127.0.0.1,GET,https://127.0.0.1:8000//trip/resultat?dateDepart=2025-07-20&nombrePassagers=3&villeArrivee=Marseille&villeDepart=Paris,1753052664,,404,request
