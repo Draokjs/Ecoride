@@ -37,6 +37,7 @@ class TripController extends AbstractController
         $villeArrivee = $request->query->get('villeArrivee');
         $dateDepart = $request->query->get('dateDepart');
         $dateArrivee = $request->query->get('dateArrivee');
+        $nombrePassagers = $request->query->get('nombrePassagers');
         
         try {
             $dateDepartObj = $dateDepart ? new \DateTime($dateDepart) : null;
@@ -55,6 +56,13 @@ class TripController extends AbstractController
 
         return $this->render('trip/resultat.html.twig', [
             'trips' => $trips,
+            'search' => [
+                'departure' => $villeDepart,
+                'arrival' => $villeArrivee,
+                'dateDeparture' => $dateDepart,
+                'dateArrival' => $dateArrivee,
+                'numberOfPassengers' => $nombrePassagers,
+            ],
         ]);
     }
 }
