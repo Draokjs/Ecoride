@@ -13,18 +13,18 @@ class SearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('villeDepart', TextType::class, [
-            'label' => "Ville de départ",
-            'constraints' => [
-                new NotBlank(['message' => 'Entrez une ville de départ.']),
-            ],
-            'attr' => [
-                'id' => 'villeDepart',
-                'class' => 'form-control fs-4',
-                'placeholder' => 'Ville de départ',
-                'list' => 'cities',
-            ],
-        ])
+            ->add('villeDepart', TextType::class, [
+                'label' => "Ville de départ",
+                'constraints' => [
+                    new NotBlank(['message' => 'Entrez une ville de départ.']),
+                ],
+                'attr' => [
+                    'id' => 'villeDepart',
+                    'class' => 'form-control fs-4',
+                    'placeholder' => 'Ville de départ',
+                    'list' => 'cities',
+                ],
+            ])
             ->add('villeArrivee', TextType::class, [
                 'label' => "Ville d'arrivée",
                 'attr' => [
@@ -62,4 +62,10 @@ class SearchType extends AbstractType
                 ],
             ]);
     }
+
+    public function getBlockPrefix(): string
+    {
+        return 'search';
+    }
 }
+

@@ -13,5 +13,5 @@ class TripRepository extends ServiceEntityRepository
         parent::__construct($registry, Trip::class);
     }
 
-    // Add any custom repository methods here
+  
 }

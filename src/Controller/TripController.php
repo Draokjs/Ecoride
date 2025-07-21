@@ -2,93 +2,86 @@
 
 namespace App\Controller;
 
+use App\Form\SearchType;
+use App\Repository\TripRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\TripRepository;
 
 class TripController extends AbstractController
 {
-    #[Route('/trip/autocomplete', name: 'trip_autocomplete')]
-    public function autocomplete(Request $request, TripRepository $tripRepo): JsonResponse
-    {
-        $query = $request->query->get('q');
-        $type = $request->query->get('type');
-
-        $field = $type === 'arrivee' ? 't.villeArrivee' : 't.villeDepart';
-
-        $results = $tripRepo->createQueryBuilder('t')
-            ->select("DISTINCT $field")
-            ->where("$field LIKE :query")
-            ->setParameter('query', $query . '%')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getSingleColumnResult();
-
-        return $this->json($results);
-    }
-
     #[Route('/trip/resultat', name: 'trip_resultat')]
     public function resultat(Request $request, TripRepository $tripRepo): Response
     {
-        $villeDepart = $request->query->get('villeDepart');
-        $villeArrivee = $request->query->get('villeArrivee');
-        $dateDepart = $request->query->get('dateDepart');
-        $dateArrivee = $request->query->get('dateArrivee');
-        $nombrePassagers = (int) $request->query->get('nombrePassagers', 1);
+        $form = $this->createForm(SearchType::class, null, [
+            'method' => 'GET',
+            'csrf_protection' => false,
+        ]);
 
-        try {
-            $dateDepartObj = $dateDepart ? new \DateTime($dateDepart) : null;
-            $dateArriveeObj = $dateArrivee ? new \DateTime($dateArrivee) : null;
-        } catch (\Exception $e) {
-            $dateDepartObj = null;
-            $dateArriveeObj = null;
+        $form->handleRequest($request);
+
+        $trips = [];
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+
+        if (is_string($data['dateDepart'] ?? null)) {
+            $data['dateDepart'] = new \DateTime($data['dateDepart']);
+        }
+        if (is_string($data['dateArrivee'] ?? null)) {
+            $data['dateArrivee'] = new \DateTime($data['dateArrivee']);
         }
 
-        // Use QueryBuilder to build a flexible query
-        $qb = $tripRepo->createQueryBuilder('t');
+            $villeDepart = $data['villeDepart'] ?? null;
+            $villeArrivee = $data['villeArrivee'] ?? null;
+            $dateDepartObj = $data['dateDepart'] ?? null;
+            $dateArriveeObj = $data['dateArrivee'] ?? null;
+            $nombrePassagers = $data['nombrePassagers'] ?? 1;
 
-        if ($villeDepart) {
-            $qb->andWhere('t.villeDepart LIKE :villeDepart')
-                ->setParameter('villeDepart', '%'.$villeDepart.'%');
+            $qb = $tripRepo->createQueryBuilder('t');
+
+            if ($villeDepart) {
+                $qb->andWhere('t.villeDepart LIKE :villeDepart')
+                    ->setParameter('villeDepart', '%'.$villeDepart.'%');
+            }
+
+            if ($villeArrivee) {
+                $qb->andWhere('t.villeArrivee LIKE :villeArrivee')
+                    ->setParameter('villeArrivee', '%'.$villeArrivee.'%');
+            }
+
+            if ($dateDepartObj) {
+                $qb->andWhere('t.dateDepart >= :dateDepart')
+                    ->setParameter('dateDepart', $dateDepartObj);
+            }
+
+            if ($dateArriveeObj) {
+                $qb->andWhere('t.dateArrivee <= :dateArrivee')
+                    ->setParameter('dateArrivee', $dateArriveeObj);
+            }
+
+            if ($nombrePassagers > 0) {
+                $qb->andWhere('t.nombrePassagers >= :nombrePassagers')
+                    ->setParameter('nombrePassagers', $nombrePassagers);
+            }
+
+            $trips = $qb->getQuery()->getResult();
         }
 
-        if ($villeArrivee) {
-            $qb->andWhere('t.villeArrivee LIKE :villeArrivee')
-                ->setParameter('villeArrivee', '%'.$villeArrivee.'%');
-        }
-
-        if ($dateDepartObj) {
-            $qb->andWhere('t.dateDepart >= :dateDepart')
-                ->setParameter('dateDepart', $dateDepartObj);
-        }
-
-        if ($dateArriveeObj) {
-            $qb->andWhere('t.dateArrivee <= :dateArrivee')
-                ->setParameter('dateArrivee', $dateArriveeObj);
-        }
-
-        if ($nombrePassagers > 0) {
-            $qb->andWhere('t.nombrePassagers >= :nombrePassagers')
-                ->setParameter('nombrePassagers', $nombrePassagers);
-        }
-
-        $trips = $qb->getQuery()->getResult();
-
-        // Prepare search array to pass to twig (for form repopulation etc.)
         $search = [
-            'villeDepart' => $villeDepart,
-            'villeArrivee' => $villeArrivee,
-            'dateDepart' => $dateDepart,
-            'dateArrivee' => $dateArrivee,
-            'nombrePassagers' => $nombrePassagers,
+            'villeDepart' => $form->get('villeDepart')->getData() ?? '',
+            'villeArrivee' => $form->get('villeArrivee')->getData() ?? '',
+            'dateDepart' => $form->get('dateDepart')->getData() ? $form->get('dateDepart')->getData()->format('Y-m-d') : '',
+            'dateArrivee' => $form->get('dateArrivee')->getData() ? $form->get('dateArrivee')->getData()->format('Y-m-d') : '',
+            'nombrePassagers' => $form->get('nombrePassagers')->getData() ?? 0,
         ];
 
         return $this->render('trip/resultat.html.twig', [
             'trips' => $trips,
+            'form' => $form->createView(),
             'search' => $search,
         ]);
     }
 }
+

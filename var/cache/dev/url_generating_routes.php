@@ -27,7 +27,6 @@ return [
     'app_monespace_redirecttoespace' => [[], ['_controller' => 'App\\Controller\\MonEspaceController::redirectToEspace'], [], [['text', '/Espace']], [], [], []],
     'register' => [[], ['_controller' => 'App\\Controller\\RegisterController::register'], [], [['text', '/register']], [], [], []],
     'resultat' => [[], ['_controller' => 'App\\Controller\\SearchController::search'], [], [['text', '/trip']], [], [], []],
-    'trip_autocomplete' => [[], ['_controller' => 'App\\Controller\\TripController::autocomplete'], [], [['text', '/trip/autocomplete']], [], [], []],
     'trip_resultat' => [[], ['_controller' => 'App\\Controller\\TripController::resultat'], [], [['text', '/trip/resultat']], [], [], []],
     'App\Controller\ContactController::index' => [[], ['_controller' => 'App\\Controller\\ContactController::index'], [], [['text', '/contact']], [], [], []],
     'App\Controller\HomeController::home' => [[], ['_controller' => 'App\\Controller\\HomeController::home'], [], [['text', '/']], [], [], []],
@@ -38,6 +37,5 @@ return [
     'App\Controller\MonEspaceController::redirectToEspace' => [[], ['_controller' => 'App\\Controller\\MonEspaceController::redirectToEspace'], [], [['text', '/Espace']], [], [], []],
     'App\Controller\RegisterController::register' => [[], ['_controller' => 'App\\Controller\\RegisterController::register'], [], [['text', '/register']], [], [], []],
     'App\Controller\SearchController::search' => [[], ['_controller' => 'App\\Controller\\SearchController::search'], [], [['text', '/trip']], [], [], []],
-    'App\Controller\TripController::autocomplete' => [[], ['_controller' => 'App\\Controller\\TripController::autocomplete'], [], [['text', '/trip/autocomplete']], [], [], []],
     'App\Controller\TripController::resultat' => [[], ['_controller' => 'App\\Controller\\TripController::resultat'], [], [['text', '/trip/resultat']], [], [], []],
 ];

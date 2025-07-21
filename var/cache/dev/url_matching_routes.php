@@ -24,7 +24,6 @@ return [
         '/Espace' => [[['_route' => 'app_monespace_redirecttoespace', '_controller' => 'App\\Controller\\MonEspaceController::redirectToEspace'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\RegisterController::register'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/trip' => [[['_route' => 'resultat', '_controller' => 'App\\Controller\\SearchController::search'], null, null, null, false, false, null]],
-        '/trip/autocomplete' => [[['_route' => 'trip_autocomplete', '_controller' => 'App\\Controller\\TripController::autocomplete'], null, null, null, false, false, null]],
         '/trip/resultat' => [[['_route' => 'trip_resultat', '_controller' => 'App\\Controller\\TripController::resultat'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
