@@ -33,9 +33,9 @@ class TripFixtures extends Fixture
             $trip->setDateDepart($dateDepart);
             $trip->setDateArrivee($dateArrivee);
             $trip->setNombrePassagers($faker->numberBetween(1, 4));
-            $trip->setDriverName($faker->randomElement($driverNames));
-            $trip->setPrice($faker->numberBetween(10, 100));
-            $trip->setRating($faker->numberBetween(1, 5));
+            $trip->setPrix($faker->numberBetween(10, 100));
+            $trip->setDriverName($faker->name);
+            $trip->setRating($faker->randomFloat(1, 1, 5));
 
             $manager->persist($trip);
         }
@@ -43,3 +43,4 @@ class TripFixtures extends Fixture
         $manager->flush();
     }
 }
+

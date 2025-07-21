@@ -26,8 +26,14 @@ class Trip
     #[ORM\Column(type: "integer")]
     private ?int $nombrePassagers = null;
 
-    // ...
+    #[ORM\Column(type: "integer")]
+    private ?int $prix = null;
+
+    #[ORM\Column(type: "string", length: 100)]
     private ?string $driverName = null;
+
+    #[ORM\Column(type: "float")]
+    private ?float $rating = null;
 
     public function getId(): ?int { return $this->id; }
 
@@ -46,16 +52,13 @@ class Trip
     public function getNombrePassagers(): ?int { return $this->nombrePassagers; }
     public function setNombrePassagers(int $nombrePassagers): static { $this->nombrePassagers = $nombrePassagers; return $this; }
 
-    public function getDriverName(): ?string
-    {
-        return $this->driverName;
-    }
+    public function getPrix(): ?int { return $this->prix; }
+    public function setPrix(int $prix): static { $this->prix = $prix; return $this; }
 
-    public function setDriverName(string $driverName): self
-    {
-        $this->driverName = $driverName;
+    public function getDriverName(): ?string { return $this->driverName; }
+    public function setDriverName(string $driverName): static { $this->driverName = $driverName; return $this; }
 
-        return $this;
-    }
+    public function getRating(): ?float { return $this->rating; }
+    public function setRating(float $rating): static { $this->rating = $rating; return $this; }
 }
 
