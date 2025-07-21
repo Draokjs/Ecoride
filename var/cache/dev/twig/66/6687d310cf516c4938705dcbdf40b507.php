@@ -126,7 +126,7 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 10
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'form_start', ["attr" => ["class" => "p-4 rounded", "id" => "search"], "method" => "GET", "action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("resultat")]);
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'form_start', ["attr" => ["class" => "p-4 rounded", "id" => "search"], "method" => "GET", "action" => $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("trip_resultat")]);
         // line 14
         yield "
 <div class=\"test-custom-color\">Test Main Color</div>
@@ -154,7 +154,7 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
 
     ";
         // line 26
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), "Ville_depart", [], "any", false, false, false, 26), 'row', ["attr" => ["list" => "cities", "class" => "form-control fs-4", "placeholder" => "Ville de départ", "id" => "villeDepart"], "label_attr" => ["class" => "form-label fs-5"]]);
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), "villeDepart", [], "any", false, false, false, 26), 'row', ["attr" => ["list" => "cities", "class" => "form-control fs-4", "placeholder" => "Ville de départ", "id" => "villeDepart"], "label_attr" => ["class" => "form-label fs-5"]]);
         // line 34
         yield "
     <span id=\"error-villeDepart\" class=\"error-message text-danger fs-6\"></span>
@@ -171,7 +171,7 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
   <div class=\"col-md-5\">
     ";
         // line 47
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 47, $this->source); })()), "Ville_arrivee", [], "any", false, false, false, 47), 'row', ["attr" => ["class" => "form-control fs-4", "placeholder" => "Ville d'arrivée", "id" => "villeArrivee"], "label_attr" => ["class" => "form-label fs-5"]]);
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 47, $this->source); })()), "villeArrivee", [], "any", false, false, false, 47), 'row', ["attr" => ["class" => "form-control fs-4", "placeholder" => "Ville d'arrivée", "id" => "villeArrivee"], "label_attr" => ["class" => "form-label fs-5"]]);
         // line 54
         yield "
     <span id=\"error-villeArrivee\" class=\"error-message text-danger fs-6\"></span>
@@ -182,7 +182,7 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
   <div class=\"col-md-6\">
     ";
         // line 61
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 61, $this->source); })()), "date_depart", [], "any", false, false, false, 61), 'row', ["attr" => ["class" => "form-control fs-4", "placeholder" => "Date de départ", "id" => "dateDepart"], "label_attr" => ["class" => "form-label fs-5"]]);
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 61, $this->source); })()), "dateDepart", [], "any", false, false, false, 61), 'row', ["attr" => ["class" => "form-control fs-4", "placeholder" => "Date de départ", "id" => "dateDepart"], "label_attr" => ["class" => "form-label fs-5"]]);
         // line 68
         yield "
     <span id=\"error-dateDepart\" class=\"error-message text-danger fs-6\"></span>
@@ -190,7 +190,7 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
   <div class=\"col-md-6\">
     ";
         // line 72
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 72, $this->source); })()), "date_arrivee", [], "any", false, false, false, 72), 'row', ["attr" => ["class" => "form-control fs-4", "placeholder" => "Date d'arrivée", "id" => "dateArrivee"], "label_attr" => ["class" => "form-label fs-5"]]);
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 72, $this->source); })()), "dateArrivee", [], "any", false, false, false, 72), 'row', ["attr" => ["class" => "form-control fs-4", "placeholder" => "Date d'arrivée", "id" => "dateArrivee"], "label_attr" => ["class" => "form-label fs-5"]]);
         // line 79
         yield "
     <span id=\"error-dateArrivee\" class=\"error-message text-danger fs-6\"></span>
@@ -201,7 +201,7 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
   <div class=\"col-md-12\">
     ";
         // line 86
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 86, $this->source); })()), "nombre_passagers", [], "any", false, false, false, 86), 'row', ["attr" => ["class" => "form-control fs-4", "id" => "passengers"], "label_attr" => ["class" => "form-label fs-5"]]);
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 86, $this->source); })()), "nombrePassagers", [], "any", false, false, false, 86), 'row', ["attr" => ["class" => "form-control fs-4", "id" => "passengers"], "label_attr" => ["class" => "form-label fs-5"]]);
         // line 92
         yield "
     <span id=\"error-passengers\" class=\"error-message text-danger fs-6\"></span>
@@ -333,7 +333,7 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
 {{ form_start(form, { 
     'attr': { 'class': 'p-4 rounded', 'id': 'search' },
     'method': 'GET', 
-    'action': path('resultat') 
+    'action': path('trip_resultat') 
 }) }}
 <div class=\"test-custom-color\">Test Main Color</div>
 <p class=\"text-center fs-4\">Itinéraire</p>
@@ -346,7 +346,7 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
         {% endfor %}
     </datalist>
 
-    {{ form_row(form.Ville_depart, { 
+    {{ form_row(form.villeDepart, { 
         'attr': {
           'list': 'cities', 
           'class': 'form-control fs-4', 
@@ -367,7 +367,7 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
   </div>
 
   <div class=\"col-md-5\">
-    {{ form_row(form.Ville_arrivee, { 
+    {{ form_row(form.villeArrivee, { 
         'attr': {
           'class': 'form-control fs-4', 
           'placeholder': \"Ville d'arrivée\", 
@@ -381,7 +381,7 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
 
 <div class=\"row mb-3\">
   <div class=\"col-md-6\">
-    {{ form_row(form.date_depart, {
+    {{ form_row(form.dateDepart, {
       'attr': {
         'class': 'form-control fs-4',
         'placeholder': 'Date de départ',
@@ -392,7 +392,7 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
     <span id=\"error-dateDepart\" class=\"error-message text-danger fs-6\"></span>
   </div>
   <div class=\"col-md-6\">
-    {{ form_row(form.date_arrivee, {
+    {{ form_row(form.dateArrivee, {
       'attr': {
         'class': 'form-control fs-4',
         'placeholder': 'Date d\\'arrivée',
@@ -406,7 +406,7 @@ class __TwigTemplate_5f975d2f1a86eb2b2ef571006003762e extends Template
 
 <div class=\"row mb-3\">
   <div class=\"col-md-12\">
-    {{ form_row(form.nombre_passagers, {
+    {{ form_row(form.nombrePassagers, {
       'attr': {
         'class': 'form-control fs-4',
         'id': 'passengers'

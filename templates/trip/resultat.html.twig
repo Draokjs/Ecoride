@@ -31,13 +31,13 @@
   <script>console.error("Variable 'search' manquante dans Twig.");</script>
 {% endif %}
 <script>
-  window.searchData = {
-    departure: "{{ search.departure|e('js') }}",
-    arrival: "{{ search.arrival|e('js') }}",
-    dateDeparture: "{{ search.dateDeparture }}",
+ window.searchData = {
+    departure: "{{ search.villeDepart|e('js') }}",
+    arrival: "{{ search.villeArrivee|e('js') }}",
+    dateDeparture: "{{ search.dateDepart }}",
     dateArrivee: "{{ search.dateArrivee }}",
-    numberOfPassengers: {{ search.numberOfPassengers|default(0) }}
-  };
+    numberOfPassengers: {{ search.nombrePassagers|default(0) }}
+};
 </script>
 <script src="{{ asset('js/Resultat.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>

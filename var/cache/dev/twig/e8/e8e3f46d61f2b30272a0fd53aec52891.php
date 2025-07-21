@@ -144,32 +144,38 @@ class __TwigTemplate_1cd162cc651b83e8116d10048a5aee93 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 30
+        if ((($tmp =  !array_key_exists("search", $context)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 31
+            yield "  <script>console.error(\"Variable 'search' manquante dans Twig.\");</script>
+";
+        }
+        // line 33
         yield "<script>
-  window.searchData = {
+ window.searchData = {
     departure: \"";
-        // line 32
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 32, $this->source); })()), "departure", [], "any", false, false, false, 32), "js"), "html", null, true);
+        // line 35
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 35, $this->source); })()), "villeDepart", [], "any", false, false, false, 35), "js"), "html", null, true);
         yield "\",
     arrival: \"";
-        // line 33
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 33, $this->source); })()), "arrival", [], "any", false, false, false, 33), "js"), "html", null, true);
+        // line 36
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 36, $this->source); })()), "villeArrivee", [], "any", false, false, false, 36), "js"), "html", null, true);
         yield "\",
     dateDeparture: \"";
-        // line 34
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 34, $this->source); })()), "dateDeparture", [], "any", false, false, false, 34), "html", null, true);
+        // line 37
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 37, $this->source); })()), "dateDepart", [], "any", false, false, false, 37), "html", null, true);
         yield "\",
     dateArrivee: \"";
-        // line 35
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 35, $this->source); })()), "dateArrivee", [], "any", false, false, false, 35), "html", null, true);
+        // line 38
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 38, $this->source); })()), "dateArrivee", [], "any", false, false, false, 38), "html", null, true);
         yield "\",
     numberOfPassengers: ";
-        // line 36
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["search"] ?? null), "numberOfPassengers", [], "any", true, true, false, 36)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 36, $this->source); })()), "numberOfPassengers", [], "any", false, false, false, 36), 0)) : (0)), "html", null, true);
+        // line 39
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["search"] ?? null), "nombrePassagers", [], "any", true, true, false, 39)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["search"]) || array_key_exists("search", $context) ? $context["search"] : (function () { throw new RuntimeError('Variable "search" does not exist.', 39, $this->source); })()), "nombrePassagers", [], "any", false, false, false, 39), 0)) : (0)), "html", null, true);
         yield "
-  };
+};
 </script>
 <script src=\"";
-        // line 39
+        // line 42
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/Resultat.js"), "html", null, true);
         yield "\"></script>
 <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js\"></script>
@@ -205,7 +211,7 @@ class __TwigTemplate_1cd162cc651b83e8116d10048a5aee93 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  173 => 39,  167 => 36,  163 => 35,  159 => 34,  155 => 33,  151 => 32,  147 => 30,  134 => 29,  113 => 17,  109 => 15,  96 => 13,  92 => 12,  89 => 11,  85 => 9,  83 => 8,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  179 => 42,  173 => 39,  169 => 38,  165 => 37,  161 => 36,  157 => 35,  153 => 33,  149 => 31,  147 => 30,  134 => 29,  113 => 17,  109 => 15,  96 => 13,  92 => 12,  89 => 11,  85 => 9,  83 => 8,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -239,14 +245,17 @@ class __TwigTemplate_1cd162cc651b83e8116d10048a5aee93 extends Template
 {% endblock %}
 
 {% block javascripts %}
+{% if search is not defined %}
+  <script>console.error(\"Variable 'search' manquante dans Twig.\");</script>
+{% endif %}
 <script>
-  window.searchData = {
-    departure: \"{{ search.departure|e('js') }}\",
-    arrival: \"{{ search.arrival|e('js') }}\",
-    dateDeparture: \"{{ search.dateDeparture }}\",
+ window.searchData = {
+    departure: \"{{ search.villeDepart|e('js') }}\",
+    arrival: \"{{ search.villeArrivee|e('js') }}\",
+    dateDeparture: \"{{ search.dateDepart }}\",
     dateArrivee: \"{{ search.dateArrivee }}\",
-    numberOfPassengers: {{ search.numberOfPassengers|default(0) }}
-  };
+    numberOfPassengers: {{ search.nombrePassagers|default(0) }}
+};
 </script>
 <script src=\"{{ asset('js/Resultat.js') }}\"></script>
 <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js\"></script>

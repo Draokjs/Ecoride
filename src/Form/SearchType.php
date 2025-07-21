@@ -6,21 +6,25 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class SearchType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('villeDepart', TextType::class, [
-                'label' => "Ville de départ",
-                'attr' => [
-                    'id' => 'departure-city',
-                    'class' => 'form-control fs-4',
-                    'placeholder' => 'Ville de départ',
-                    'list' => 'cities'
-                ],
-            ])
+        ->add('villeDepart', TextType::class, [
+            'label' => "Ville de départ",
+            'constraints' => [
+                new NotBlank(['message' => 'Entrez une ville de départ.']),
+            ],
+            'attr' => [
+                'id' => 'villeDepart',
+                'class' => 'form-control fs-4',
+                'placeholder' => 'Ville de départ',
+                'list' => 'cities',
+            ],
+        ])
             ->add('villeArrivee', TextType::class, [
                 'label' => "Ville d'arrivée",
                 'attr' => [

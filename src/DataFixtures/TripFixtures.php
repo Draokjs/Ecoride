@@ -17,7 +17,7 @@ class TripFixtures extends Fixture
         // Known cities list:
         $cities = ['Paris', 'Lyon', 'Marseille', 'Bordeaux', 'Lille', 'Toulouse', 'Nice', 'Nantes', 'Strasbourg', 'Rennes'];
 
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $trip = new Trip();
 
             $villeDepart = $faker->randomElement($cities);
@@ -32,7 +32,10 @@ class TripFixtures extends Fixture
             $trip->setVilleArrivee($villeArrivee);
             $trip->setDateDepart($dateDepart);
             $trip->setDateArrivee($dateArrivee);
-            $trip->setNombrePassagers($faker->numberBetween(1, 5));
+            $trip->setNombrePassagers($faker->numberBetween(1, 4));
+            $trip->setDriverName($faker->randomElement($driverNames));
+            $trip->setPrice($faker->numberBetween(10, 100));
+            $trip->setRating($faker->numberBetween(1, 5));
 
             $manager->persist($trip);
         }
