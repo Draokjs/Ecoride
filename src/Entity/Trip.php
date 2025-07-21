@@ -26,7 +26,9 @@ class Trip
     #[ORM\Column(type: "integer")]
     private ?int $nombrePassagers = null;
 
-    // getters & setters ...
+    // ...
+    private ?string $driverName = null;
+
     public function getId(): ?int { return $this->id; }
 
     public function getVilleDepart(): ?string { return $this->villeDepart; }
@@ -43,4 +45,17 @@ class Trip
 
     public function getNombrePassagers(): ?int { return $this->nombrePassagers; }
     public function setNombrePassagers(int $nombrePassagers): static { $this->nombrePassagers = $nombrePassagers; return $this; }
+
+    public function getDriverName(): ?string
+    {
+        return $this->driverName;
+    }
+
+    public function setDriverName(string $driverName): self
+    {
+        $this->driverName = $driverName;
+
+        return $this;
+    }
 }
+
