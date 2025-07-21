@@ -12,16 +12,16 @@ class SearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Ville_depart', TextType::class, [
+            ->add('villeDepart', TextType::class, [
                 'label' => "Ville de départ",
                 'attr' => [
                     'id' => 'departure-city',
-                    'class' => 'form-control fs-4',   // add class to style consistent with HTML
+                    'class' => 'form-control fs-4',
                     'placeholder' => 'Ville de départ',
-                    'list' => 'cities'                // if you use datalist as in Twig
+                    'list' => 'cities'
                 ],
             ])
-            ->add('Ville_arrivee', TextType::class, [
+            ->add('villeArrivee', TextType::class, [
                 'label' => "Ville d'arrivée",
                 'attr' => [
                     'id' => 'arrival-city',
@@ -30,7 +30,7 @@ class SearchType extends AbstractType
                     'list' => 'cities'
                 ],
             ])
-            ->add('date_depart', DateType::class, [
+            ->add('dateDepart', DateType::class, [
                 'widget' => 'single_text',
                 'label' => "Date de départ",
                 'attr' => [
@@ -39,7 +39,7 @@ class SearchType extends AbstractType
                     'placeholder' => 'Date de départ',
                 ],
             ])
-            ->add('date_arrivee', DateType::class, [
+            ->add('dateArrivee', DateType::class, [
                 'widget' => 'single_text',
                 'label' => "Date d'arrivée",
                 'attr' => [
@@ -48,7 +48,7 @@ class SearchType extends AbstractType
                     'placeholder' => "Date d'arrivée",
                 ],
             ])
-            ->add('nombre_passagers', IntegerType::class, [
+            ->add('nombrePassagers', IntegerType::class, [
                 'label' => 'Passagers',
                 'attr' => [
                     'id' => 'passengers',

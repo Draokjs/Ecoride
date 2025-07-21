@@ -15,7 +15,7 @@ class TripController extends AbstractController
     public function autocomplete(Request $request, TripRepository $tripRepo): JsonResponse
     {
         $query = $request->query->get('q');
-        $type = $request->query->get('type', 'depart');
+        $type = $request->query->get('type');
 
         $field = $type === 'arrivee' ? 't.villeArrivee' : 't.villeDepart';
 
@@ -29,16 +29,16 @@ class TripController extends AbstractController
 
         return $this->json($results);
     }
-    
+
     #[Route('/trip/resultat', name: 'trip_resultat')]
     public function resultat(Request $request, TripRepository $tripRepo): Response
     {
-        $villeDepart = $request->query->get('villeDepart', '');
-        $villeArrivee = $request->query->get('villeArrivee', '');
-        $dateDepart = $request->query->get('dateDepart', '');
-        $dateArrivee = $request->query->get('dateArrivee', '');
-        $nombrePassagers = $request->query->get('nombrePassagers', '');
-        
+        $villeDepart = $request->query->get('villeDepart');
+        $villeArrivee = $request->query->get('villeArrivee');
+        $dateDepart = $request->query->get('dateDepart');
+        $dateArrivee = $request->query->get('dateArrivee');
+        $nombrePassagers = (int) $request->query->get('nombrePassagers', 1);
+
         try {
             $dateDepartObj = $dateDepart ? new \DateTime($dateDepart) : null;
             $dateArriveeObj = $dateArrivee ? new \DateTime($dateArrivee) : null;
@@ -47,22 +47,44 @@ class TripController extends AbstractController
             $dateArriveeObj = null;
         }
 
-        $search = [
-            'departure' => $villeDepart,
-            'arrival' => $villeArrivee,
-            'dateDeparture' => $dateDepart,
-            'dateArrivee' => $dateArrivee,
-            'numberOfPassengers' => $nombrePassagers,
-        ];
+        // Use QueryBuilder to build a flexible query
+        $qb = $tripRepo->createQueryBuilder('t');
 
-        $trips = $tripRepo->findBy([
+        if ($villeDepart) {
+            $qb->andWhere('t.villeDepart LIKE :villeDepart')
+                ->setParameter('villeDepart', '%'.$villeDepart.'%');
+        }
+
+        if ($villeArrivee) {
+            $qb->andWhere('t.villeArrivee LIKE :villeArrivee')
+                ->setParameter('villeArrivee', '%'.$villeArrivee.'%');
+        }
+
+        if ($dateDepartObj) {
+            $qb->andWhere('t.dateDepart >= :dateDepart')
+                ->setParameter('dateDepart', $dateDepartObj);
+        }
+
+        if ($dateArriveeObj) {
+            $qb->andWhere('t.dateArrivee <= :dateArrivee')
+                ->setParameter('dateArrivee', $dateArriveeObj);
+        }
+
+        if ($nombrePassagers > 0) {
+            $qb->andWhere('t.nombrePassagers >= :nombrePassagers')
+                ->setParameter('nombrePassagers', $nombrePassagers);
+        }
+
+        $trips = $qb->getQuery()->getResult();
+
+        // Prepare search array to pass to twig (for form repopulation etc.)
+        $search = [
             'villeDepart' => $villeDepart,
             'villeArrivee' => $villeArrivee,
-            'dateDepart' => $dateDepartObj,
-            'dateArrivee' => $dateArriveeObj
-        ]);
-
-        dump($request->query->all());
+            'dateDepart' => $dateDepart,
+            'dateArrivee' => $dateArrivee,
+            'nombrePassagers' => $nombrePassagers,
+        ];
 
         return $this->render('trip/resultat.html.twig', [
             'trips' => $trips,
@@ -70,4 +92,3 @@ class TripController extends AbstractController
         ]);
     }
 }
-

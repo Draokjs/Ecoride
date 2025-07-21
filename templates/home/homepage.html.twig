@@ -10,7 +10,7 @@
 {{ form_start(form, { 
     'attr': { 'class': 'p-4 rounded', 'id': 'search' },
     'method': 'GET', 
-    'action': path('resultat') 
+    'action': path('trip_resultat') 
 }) }}
 <div class="test-custom-color">Test Main Color</div>
 <p class="text-center fs-4">Itinéraire</p>
@@ -23,7 +23,7 @@
         {% endfor %}
     </datalist>
 
-    {{ form_row(form.Ville_depart, { 
+    {{ form_row(form.villeDepart, { 
         'attr': {
           'list': 'cities', 
           'class': 'form-control fs-4', 
@@ -44,7 +44,7 @@
   </div>
 
   <div class="col-md-5">
-    {{ form_row(form.Ville_arrivee, { 
+    {{ form_row(form.villeArrivee, { 
         'attr': {
           'class': 'form-control fs-4', 
           'placeholder': "Ville d'arrivée", 
@@ -58,7 +58,7 @@
 
 <div class="row mb-3">
   <div class="col-md-6">
-    {{ form_row(form.date_depart, {
+    {{ form_row(form.dateDepart, {
       'attr': {
         'class': 'form-control fs-4',
         'placeholder': 'Date de départ',
@@ -69,7 +69,7 @@
     <span id="error-dateDepart" class="error-message text-danger fs-6"></span>
   </div>
   <div class="col-md-6">
-    {{ form_row(form.date_arrivee, {
+    {{ form_row(form.dateArrivee, {
       'attr': {
         'class': 'form-control fs-4',
         'placeholder': 'Date d\'arrivée',
@@ -83,7 +83,7 @@
 
 <div class="row mb-3">
   <div class="col-md-12">
-    {{ form_row(form.nombre_passagers, {
+    {{ form_row(form.nombrePassagers, {
       'attr': {
         'class': 'form-control fs-4',
         'id': 'passengers'
